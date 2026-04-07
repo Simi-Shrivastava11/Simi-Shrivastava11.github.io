@@ -8,10 +8,25 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --bg: #f8f7f4;
+  --surface: #fffdf9;
+  --surface-2: #f3efe7;
+  --text: #1f1f1f;
+  --muted: #5f5a52;
+  --border: #e7e3db;
+  --accent: #6b7cff;
+  --accent-soft: #eef1ff;
+  --shadow: 0 10px 30px rgba(31, 31, 31, 0.06);
+}
+
 body {
   font-family: Inter, Arial, sans-serif;
-  background: #f8f7f4;
-  color: #1f1f1f;
+  background:
+    radial-gradient(circle at top left, #f1f4ff 0%, transparent 32%),
+    radial-gradient(circle at top right, #f7efe8 0%, transparent 28%),
+    var(--bg);
+  color: var(--text);
   line-height: 1.6;
 }
 
@@ -23,9 +38,9 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  background: rgba(248, 247, 244, 0.9);
+  background: rgba(248, 247, 244, 0.82);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e7e3db;
+  border-bottom: 1px solid var(--border);
   z-index: 100;
 }
 
@@ -48,11 +63,16 @@ a {
   display: flex;
   gap: 24px;
   font-size: 0.95rem;
-  color: #555;
+  color: var(--muted);
+}
+
+.nav-links a {
+  position: relative;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: #111;
+  color: var(--text);
 }
 
 main {
@@ -62,29 +82,35 @@ main {
 }
 
 .hero {
-  padding: 72px 0 56px;
+  padding: 84px 0 64px;
 }
 
 .eyebrow {
-  font-size: 0.9rem;
-  color: #7a6f62;
-  margin-bottom: 16px;
-  letter-spacing: 0.04em;
+  display: inline-block;
+  font-size: 0.82rem;
+  color: var(--accent);
+  margin-bottom: 18px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  font-weight: 600;
+  background: var(--accent-soft);
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #dfe5ff;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
   line-height: 0.95;
   margin-bottom: 20px;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
 }
 
 .hero-text {
-  max-width: 720px;
+  max-width: 760px;
   font-size: 1.15rem;
-  color: #4d4d4d;
-  margin-bottom: 28px;
+  color: #45413b;
+  margin-bottom: 30px;
 }
 
 .hero-links {
@@ -97,24 +123,26 @@ main {
   border: 1px solid #d9d3c7;
   padding: 11px 16px;
   border-radius: 999px;
-  background: #fffdf9;
+  background: rgba(255, 253, 249, 0.85);
   transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(31, 31, 31, 0.03);
 }
 
 .hero-links a:hover {
-  background: #1f1f1f;
+  background: var(--accent);
   color: white;
-  border-color: #1f1f1f;
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .section {
-  padding: 48px 0;
-  border-top: 1px solid #e7e3db;
+  padding: 52px 0;
+  border-top: 1px solid var(--border);
 }
 
 .section h2 {
-  font-size: 1.7rem;
-  margin-bottom: 20px;
+  font-size: 1.75rem;
+  margin-bottom: 18px;
   letter-spacing: -0.02em;
 }
 
@@ -128,22 +156,24 @@ main {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 .card {
-  background: #fffdf9;
-  border: 1px solid #e4ddd0;
-  border-radius: 20px;
-  padding: 22px;
-  min-height: 180px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: block;
+  background: rgba(255, 253, 249, 0.92);
+  border: 1px solid #e4ddd0;
+  border-radius: 22px;
+  padding: 24px;
+  min-height: 190px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: var(--shadow);
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(31, 31, 31, 0.09);
+  border-color: #d5dfff;
 }
 
 .card h3 {
