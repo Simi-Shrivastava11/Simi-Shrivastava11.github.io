@@ -138,6 +138,7 @@ main {
   padding: 22px;
   min-height: 180px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: block;
 }
 
 .card:hover {
