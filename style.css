@@ -11,21 +11,16 @@ html {
 :root {
   --bg: #f8f7f4;
   --surface: #fffdf9;
-  --surface-2: #f3efe7;
   --text: #1f1f1f;
   --muted: #5f5a52;
   --border: #e7e3db;
   --accent: #6b7cff;
   --accent-soft: #eef1ff;
-  --shadow: 0 10px 30px rgba(31, 31, 31, 0.06);
 }
 
 body {
   font-family: Inter, Arial, sans-serif;
-  background:
-    radial-gradient(circle at top left, #f1f4ff 0%, transparent 32%),
-    radial-gradient(circle at top right, #f7efe8 0%, transparent 28%),
-    var(--bg);
+  background: linear-gradient(to bottom, #f3f5fb 0%, #f8f7f4 180px, #f8f7f4 100%);
   color: var(--text);
   line-height: 1.6;
 }
@@ -67,7 +62,6 @@ a {
 }
 
 .nav-links a {
-  position: relative;
   transition: color 0.2s ease;
 }
 
@@ -78,11 +72,16 @@ a {
 main {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 48px 24px 80px;
+  padding: 56px 24px 90px;
 }
 
 .hero {
-  padding: 84px 0 64px;
+  padding: 84px 56px 72px;
+  background: rgba(255, 253, 249, 0.7);
+  border: 1px solid #e7e3db;
+  border-radius: 32px;
+  box-shadow: 0 18px 40px rgba(31, 31, 31, 0.05);
+  margin-bottom: 28px;
 }
 
 .eyebrow {
@@ -136,8 +135,12 @@ main {
 }
 
 .section {
-  padding: 52px 0;
+  padding: 56px 0;
   border-top: 1px solid var(--border);
+}
+
+.section + .section {
+  margin-top: 10px;
 }
 
 .section h2 {
@@ -161,19 +164,19 @@ main {
 
 .card {
   display: block;
-  background: rgba(255, 253, 249, 0.92);
-  border: 1px solid #e4ddd0;
-  border-radius: 22px;
-  padding: 24px;
-  min-height: 190px;
+  background: #fffdfa;
+  border: 1px solid #e6dfd3;
+  border-radius: 24px;
+  padding: 26px;
+  min-height: 210px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 24px rgba(31, 31, 31, 0.05);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(31, 31, 31, 0.09);
-  border-color: #d5dfff;
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(31, 31, 31, 0.09);
+  border-color: #d8d0c2;
 }
 
 .card h3 {
@@ -204,6 +207,10 @@ main {
   }
 
   .hero {
-    padding-top: 48px;
+    padding: 48px 24px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
   }
 }
