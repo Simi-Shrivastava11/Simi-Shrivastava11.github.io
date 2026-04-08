@@ -1,100 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simi Shrivastava</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Simi Shrivastava</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#e5ddd0;
+  --card:#faf7f2;
+  --ink:#1a1714;
+  --muted:#6b6258;
+  --soft:#a89e94;
+  --border:#cfc6b8;
+  --border-card:#e8e0d4;
+
+  --teal:#1f6b63;
+  --teal-pale:#dff0ed;
+  --rust:#b85432;
+  --rust-pale:#faeae0;
+  --indigo:#3b4d9c;
+  --indigo-pale:#e8eaf5;
+  --amber:#8a6520;
+  --amber-pale:#faf0dd;
+  --pine:#2a5c3f;
+  --pine-pale:#e2f0e8;
+  --plum:#6b3d7a;
+  --plum-pale:#f0e8f5;
+
+  --serif:'Lora',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono',monospace;
+}
+
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75;font-weight:300;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
+.d4{transition-delay:.28s}.d5{transition-delay:.35s}.d6{transition-delay:.42s}.d7{transition-delay:.49s}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(229,221,208,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1140px;margin:0 auto;padding:.9rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:var(--serif);font-size:.95rem;font-weight:400;color:var(--ink)}
+.nav-links{display:flex;gap:1.75rem;list-style:none;align-items:center}
+.nav-links a{font-size:.81rem;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-resume{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--teal);border:1.5px solid var(--teal);padding:.3rem .85rem;border-radius:3px;transition:background .2s,color .2s}
+.nav-resume:hover{background:var(--teal);color:#fff}
+
+/* HERO */
+.hero{max-width:1140px;margin:0 auto;padding:5.5rem 2rem 6rem}
+.hero-name{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:1.2rem;letter-spacing:-.01em;max-width:680px}
+.hero-name em{font-style:italic;color:var(--teal);font-weight:400}
+.hero-bio{font-size:1rem;color:var(--muted);line-height:1.9;max-width:520px;margin-bottom:2.25rem}
+.hero-ctas{display:flex;gap:.65rem;flex-wrap:wrap}
+.cta-primary{display:inline-flex;align-items:center;background:var(--ink);color:var(--card);font-size:.8rem;font-weight:500;padding:.6rem 1.35rem;border-radius:3px;transition:background .2s}
+.cta-primary:hover{background:var(--teal)}
+.cta-ghost{display:inline-flex;align-items:center;color:var(--muted);font-size:.8rem;padding:.6rem 1.35rem;border:1px solid var(--border);border-radius:3px;background:var(--card);transition:border-color .2s,color .2s}
+.cta-ghost:hover{border-color:var(--soft);color:var(--ink)}
+
+.sep{border:none;border-top:1px solid var(--border);max-width:1140px;margin:0 auto}
+
+/* SECTION */
+.section{max-width:1140px;margin:0 auto;padding:4.5rem 2rem}
+.sec-title{font-family:var(--serif);font-size:1.7rem;font-weight:400;color:var(--ink);margin-bottom:2.75rem}
+
+/* PROJECT GRID */
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.pcard{background:var(--card);border:1px solid var(--border-card);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:box-shadow .25s,transform .25s}
+.pcard:hover{box-shadow:0 8px 28px rgba(0,0,0,.1);transform:translateY(-2px)}
+.pband{height:6px;flex-shrink:0}
+.pbody{padding:1.4rem;display:flex;flex-direction:column;gap:.75rem;flex:1}
+.phead{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem}
+.ptitle{font-family:var(--serif);font-size:.93rem;font-weight:400;color:var(--ink);line-height:1.4;flex:1}
+.pgh{font-size:.95rem;color:var(--soft);flex-shrink:0;transition:color .2s;margin-top:.1rem}
+.pgh:hover{color:var(--ink)}
+.wip{display:inline-flex;align-items:center;gap:.32rem;font-family:var(--mono);font-size:.57rem;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);background:var(--amber-pale);border:1px solid rgba(138,101,32,.2);padding:.15rem .45rem;border-radius:2px;width:fit-content}
+.wipdot{width:5px;height:5px;border-radius:50%;background:var(--amber);animation:blink 1.8s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.pdesc{font-size:.83rem;color:var(--muted);line-height:1.75;flex:1}
+
+/* tool icons on project cards */
+.tool-icons{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:.1rem}
+.tool-icons i{font-size:1.35rem;opacity:.82;transition:opacity .2s,transform .2s}
+.tool-icons i:hover{opacity:1;transform:scale(1.15)}
+.tool-text{font-family:var(--mono);font-size:.6rem;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:.18rem .45rem;border-radius:3px;letter-spacing:.03em}
+
+.ctoggle{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:.6rem;color:var(--teal);padding:0;text-align:left;letter-spacing:.04em;display:flex;align-items:center;gap:.3rem;width:fit-content;transition:opacity .2s}
+.ctoggle:hover{opacity:.7}
+.cicon{transition:transform .2s;display:inline-block;line-height:1}
+.ctoggle.open .cicon{transform:rotate(45deg)}
+.cbox{display:none;background:var(--teal-pale);border-left:2px solid var(--teal);padding:.6rem .85rem;font-size:.79rem;color:var(--teal);line-height:1.7;border-radius:0 4px 4px 0;font-style:italic}
+.cbox.open{display:block}
+
+.bt{background:var(--teal)}.br{background:var(--rust)}.bi{background:var(--indigo)}
+.bp{background:var(--pine)}.bpl{background:var(--plum)}.ba{background:var(--amber)}.bs{background:var(--soft)}
+
+/* ABOUT */
+.about-prose{max-width:660px}
+.about-prose p{font-size:.97rem;color:var(--muted);line-height:1.95;margin-bottom:1.35rem}
+.about-prose p:last-child{margin-bottom:0}
+.about-prose strong{color:var(--ink);font-weight:500}
+
+/* EDUCATION */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.edu-card{background:var(--card);border:1px solid var(--border-card);border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:box-shadow .25s}
+.edu-card:hover{box-shadow:0 6px 22px rgba(0,0,0,.09)}
+.edu-band{height:6px}
+.edu-body{padding:2rem 2rem 1.75rem}
+.edu-degree{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--ink);margin-bottom:.3rem;line-height:1.3}
+.edu-school{font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:.2rem}
+.edu-meta{font-family:var(--mono);font-size:.63rem;color:var(--soft);margin-bottom:1.1rem}
+.edu-gpa{display:inline-block;font-family:var(--mono);font-size:.68rem;background:var(--teal-pale);color:var(--teal);padding:.22rem .65rem;border-radius:2px;margin-bottom:1.1rem;letter-spacing:.05em}
+.edu-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:.45rem}
+.edu-courses{font-size:.83rem;color:var(--muted);line-height:1.75}
+
+/* ── SKILLS with icons ── */
+.skills-section{display:flex;flex-direction:column;gap:2.5rem}
+
+.skill-group{}
+.skill-group-title{
+  font-family:var(--mono);font-size:.62rem;
+  letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:1rem;font-weight:400;
+}
+
+/* icon+label cards */
+.skill-items{display:flex;flex-wrap:wrap;gap:.65rem}
+
+.skill-chip{
+  display:flex;flex-direction:column;
+  align-items:center;gap:.35rem;
+  padding:.75rem .9rem .65rem;
+  background:var(--card);
+  border:1px solid var(--border-card);
+  border-radius:8px;
+  min-width:72px;
+  transition:box-shadow .2s,transform .2s;
+  cursor:default;
+}
+.skill-chip:hover{box-shadow:0 4px 14px rgba(0,0,0,.08);transform:translateY(-2px)}
+
+.skill-chip i{font-size:1.6rem;line-height:1}
+
+.skill-chip span{
+  font-family:var(--mono);font-size:.58rem;
+  color:var(--muted);text-align:center;
+  letter-spacing:.02em;line-height:1.2;
+  white-space:nowrap;
+}
+
+/* text-only chip (no icon) */
+.skill-chip-text{
+  display:flex;align-items:center;
+  padding:.6rem .9rem;
+  background:var(--card);
+  border:1px solid var(--border-card);
+  border-radius:8px;
+  font-family:var(--mono);font-size:.68rem;
+  color:var(--muted);letter-spacing:.02em;
+  transition:box-shadow .2s;cursor:default;
+}
+.skill-chip-text:hover{box-shadow:0 4px 14px rgba(0,0,0,.07)}
+
+/* CONTACT */
+.contact-wrap{background:#1d3d38;padding:5.5rem 2rem}
+.contact-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.contact-left h2{font-family:var(--serif);font-size:2.5rem;font-weight:400;color:#f2ede4;line-height:1.25;margin-bottom:.85rem}
+.contact-left h2 em{font-style:italic;color:#9dd4cc}
+.contact-left p{font-size:.9rem;color:rgba(242,237,228,.5);line-height:1.85;max-width:360px}
+.contact-links{display:flex;flex-direction:column;gap:.75rem}
+.contact-link{display:flex;align-items:center;justify-content:space-between;padding:.95rem 1.2rem;border:1px solid rgba(255,255,255,.1);border-radius:6px;color:#f2ede4;font-size:.85rem;transition:background .2s,border-color .2s}
+.contact-link:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.22)}
+.cl-label{font-weight:500}
+.cl-val{font-family:var(--mono);font-size:.7rem;color:rgba(242,237,228,.45)}
+.cl-arrow{color:#9dd4cc}
+
+footer{background:#1d3d38;border-top:1px solid rgba(255,255,255,.07);padding:1.4rem 2rem}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+footer p{font-family:var(--mono);font-size:.6rem;color:rgba(242,237,228,.28);letter-spacing:.05em}
+
+@media(max-width:960px){.project-grid{grid-template-columns:repeat(2,1fr)}.edu-grid{grid-template-columns:1fr}.contact-inner{grid-template-columns:1fr}}
+@media(max-width:640px){.project-grid{grid-template-columns:1fr}.section{padding:3rem 1.25rem}.hero{padding:3.5rem 1.25rem 4.5rem}.nav-links{gap:1rem}.contact-wrap{padding:3.5rem 1.25rem}}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <div class="logo">Simi Shrivastava</div>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#approach">Approach</a>
-        <a href="#experience">Experience</a>
-        <a href="#tools">Tools</a>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Simi Shrivastava</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="SimiShrivastava_Resume.pdf" class="nav-resume" target="_blank">Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1 class="hero-name reveal">
+    Hi, I'm Simi.<br/>
+    <em>I build ML pipelines,<br/>train models, and ship things.</em>
+  </h1>
+  <p class="hero-bio reveal d1">
+    I am finishing my MS at the University of Maryland. Before that, I spent five years in production analytics. I like the full arc of a problem, not just the modeling part.
+  </p>
+  <div class="hero-ctas reveal d2">
+    <a href="#projects" class="cta-primary">See my work &darr;</a>
+    <a href="https://github.com/Simi-Shrivastava11" class="cta-ghost" target="_blank">GitHub &nearr;</a>
+    <a href="https://www.linkedin.com/in/simi-shrivastava" class="cta-ghost" target="_blank">LinkedIn &nearr;</a>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <h2 class="sec-title reveal">Projects</h2>
+  <div class="project-grid">
+
+    <div class="pcard reveal d1">
+      <div class="pband bt"></div>
+      <div class="pbody">
+        <div class="phead">
+          <span class="ptitle">YOLOv8 on AWS ECS/Fargate: Inference Serving at Scale</span>
+          <a href="https://github.com/Simi-Shrivastava11/YOLOv8-via-AWS-ECS-Fargate" class="pgh" target="_blank">&#8599;</a>
+        </div>
+        <p class="pdesc">Compared scalable ECS/Fargate deployment against a single EC2 baseline for YOLOv8 object detection. Ran 5,000 COCO 2017 images through quiet, sustained, and burst traffic patterns while measuring p50/p95/p99 latency and CPU utilization in CloudWatch.</p>
+        <div class="tool-icons">
+          <i class="devicon-python-plain colored" title="Python"></i>
+          <i class="devicon-docker-plain colored" title="Docker"></i>
+          <i class="devicon-amazonwebservices-plain-wordmark colored" title="AWS"></i>
+          <i class="devicon-flask-original" title="Flask"></i>
+          <span class="tool-text">YOLOv8</span>
+        </div>
+        <button class="ctoggle" onclick="tog(this)"><span class="cicon">+</span>&nbsp;My contribution</button>
+        <div class="cbox">I set up YOLOv8 inference, wrapped it in a lightweight Flask API, containerized the service with Docker, and pushed the image to Amazon ECR for the team to deploy.</div>
       </div>
-    </nav>
-  </header>
+    </div>
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow">Analytics • Data Science • Applied Machine Learning</p>
-      <h1>Simi Shrivastava</h1>
-      <p class="hero-text">
-        I’m a data science graduate student at the University of Maryland with 4+ years of experience in data analytics.
-        My work spans analytics, applied machine learning, and experimentation, with a focus on building solutions that are practical, rigorous, and useful.
-      </p>
-      <div class="hero-links">
-        <a href="https://github.com/Simi-Shrivastava11" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/simi-shrivastava" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="SimiShrivastava_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+    <div class="pcard reveal d2">
+      <div class="pband ba"></div>
+      <div class="pbody">
+        <div class="phead">
+          <span class="ptitle">TabDDPM: Can Diffusion Models Fix Clinical Class Imbalance?</span>
+          <a href="https://github.com/Simi-Shrivastava11/tabddpm-hospital-readmission-prediction" class="pgh" target="_blank">&#8599;</a>
+        </div>
+        <div class="wip"><span class="wipdot"></span>In progress</div>
+        <p class="pdesc">Hospital readmission dataset with an 89/11 class split across 101,766 patients. Comparing TabDDPM, SMOTE, and CTGAN for generating synthetic minority-class records, with XGBoost evaluated on F1 for the rare class and AUC-ROC.</p>
+        <div class="tool-icons">
+          <i class="devicon-pytorch-plain colored" title="PyTorch"></i>
+          <i class="devicon-python-plain colored" title="Python"></i>
+          <i class="devicon-jupyter-plain colored" title="Jupyter"></i>
+          <span class="tool-text">TabDDPM</span>
+          <span class="tool-text">XGBoost</span>
+        </div>
+        <button class="ctoggle" onclick="tog(this)"><span class="cicon">+</span>&nbsp;My contribution</button>
+        <div class="cbox">I built the class-conditioning component so the model generates specifically readmitted-class patients, injected the label into training, and wrote the generation pipeline from noise to synthetic patient records.</div>
       </div>
-    </section>
+    </div>
 
-    <section id="work" class="section">
-      <h2>Selected Work</h2>
-      <div class="cards">
-        <a class="card" href="https://github.com/Simi-Shrivastava11/tabddpm-hospital-readmission-prediction" target="_blank" rel="noreferrer">
-          <h3>TabDDPM for Hospital Readmission Prediction</h3>
-          <p>Explored diffusion-based synthetic tabular data generation to improve minority-class prediction in hospital readmission modeling.</p>
-        </a>
-
-        <a class="card" href="https://github.com/Simi-Shrivastava11/mnist-representation-learning-matlab" target="_blank" rel="noreferrer">
-          <h3>MNIST Representation Learning in MATLAB</h3>
-          <p>Compared PCA, Kernel PCA, LLE, and raw pixel representations for handwritten digit classification.</p>
-        </a>
-
-        <a class="card" href="https://github.com/Simi-Shrivastava11/YOLOv8-via-AWS-ECS-Fargate" target="_blank" rel="noreferrer">
-          <h3>YOLOv8 via AWS ECS/Fargate</h3>
-          <p>Built a cloud-based object detection inference pipeline using Flask, Docker, and AWS infrastructure.</p>
-        </a>
+    <div class="pcard reveal d3">
+      <div class="pband bi"></div>
+      <div class="pbody">
+        <div class="phead">
+          <span class="ptitle">What Actually Drives RNN Performance? A 36-Config Study</span>
+          <a href="https://github.com/Simi-Shrivastava11/Sentiment-Classification-RNN" class="pgh" target="_blank">&#8599;</a>
+        </div>
+        <p class="pdesc">Tested 36 configurations of RNN, LSTM, and BiLSTM on IMDB sentiment (50K reviews). Varied optimizer, activation function, sequence length, and gradient clipping. Key finding: switching Adam to SGD hurt more than switching a vanilla RNN to a BiLSTM helped. Best config: 81.6% accuracy.</p>
+        <div class="tool-icons">
+          <i class="devicon-pytorch-plain colored" title="PyTorch"></i>
+          <i class="devicon-python-plain colored" title="Python"></i>
+          <span class="tool-text">NLTK</span><span class="tool-text">LSTM</span><span class="tool-text">BiLSTM</span>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section id="approach" class="section">
-      <h2>How I Approach Problems</h2>
-      <p>
-        I approach problems by first understanding the data, the constraints, and what a useful outcome should look like.
-        I typically start with strong baselines, test ideas systematically, and add complexity only when it leads to a meaningful improvement.
-      </p>
-    </section>
-
-    <section id="experience" class="section">
-      <h2>Experience</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Canaria</h3>
-          <p>Worked on salary intelligence pipelines, anomaly detection, and data quality workflows as part of a data science internship.</p>
-        </article>
-        <article class="card">
-          <h3>Cognizant</h3>
-          <p>Supported analytics and validation work across financial datasets using SQL, Excel, Python, and dashboarding tools.</p>
-        </article>
+    <div class="pcard reveal d4">
+      <div class="pband bp"></div>
+      <div class="pbody">
+        <div class="phead">
+          <span class="ptitle">Semantic Search Engine with BPE Tokenization</span>
+          <a href="https://github.com/Simi-Shrivastava11/bpe-semantic-search" class="pgh" target="_blank">&#8599;</a>
+        </div>
+        <p class="pdesc">Built from scratch over Project Gutenberg texts. BPE handles subword tokenization, edit-distance autocorrect handles noisy queries, and TF-IDF cosine similarity handles ranking. Searching "luve" still surfaces results about love. Index is cached after the first build.</p>
+        <div class="tool-icons">
+          <i class="devicon-python-plain colored" title="Python"></i>
+          <span class="tool-text">BPE</span><span class="tool-text">TF-IDF</span><span class="tool-text">Edit Distance</span>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section id="tools" class="section">
-      <h2>Tools and Methods</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Analysis</h3>
-          <p>SQL, Excel, Tableau, Power BI, exploratory analysis, and hypothesis testing</p>
-        </article>
-        <article class="card">
-          <h3>Modeling</h3>
-          <p>Python, scikit-learn, PyTorch, feature engineering, and model evaluation</p>
-        </article>
-        <article class="card">
-          <h3>Systems</h3>
-          <p>Git, Docker, AWS, Spark, and ClickHouse</p>
-        </article>
+    <div class="pcard reveal d5">
+      <div class="pband bpl"></div>
+      <div class="pbody">
+        <div class="phead">
+          <span class="ptitle">N-Gram Language Modeling on Penn Treebank</span>
+          <a href="https://github.com/Simi-Shrivastava11/Language-Modeling-with-NGrams" class="pgh" target="_blank">&#8599;</a>
+        </div>
+        <p class="pdesc">Implemented unigram through 4-gram models and compared Laplace smoothing, linear interpolation, and Stupid Backoff by perplexity on PTB. Outputs a comparison chart and generates sample sentences from the best model so the qualitative difference is visible, not just numeric.</p>
+        <div class="tool-icons">
+          <i class="devicon-python-plain colored" title="Python"></i>
+          <i class="devicon-numpy-plain colored" title="NumPy"></i>
+          <i class="devicon-matplotlib-plain colored" title="Matplotlib"></i>
+          <span class="tool-text">N-grams</span>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <script src="script.js"></script>
+    <div class="pcard reveal d6">
+      <div class="pband br"></div>
+      <div class="pbody">
+        <div class="phead">
+          <span class="ptitle">Does Dimensionality Reduction Help Classify MNIST?</span>
+          <a href="https://github.com/Simi-Shrivastava11/mnist-representation-learning-matlab" class="pgh" target="_blank">&#8599;</a>
+        </div>
+        <p class="pdesc">Compared PCA, Kernel PCA (Nystrom approximation), LLE, and raw 784-pixel vectors before kNN classification. PCA compressed inputs to 44 dimensions and beat raw pixels: 97.23% vs 96.91%. Tracks accuracy and runtime together so the tradeoffs are explicit.</p>
+        <div class="tool-icons">
+          <i class="devicon-matlab-plain colored" title="MATLAB"></i>
+          <span class="tool-text">PCA</span><span class="tool-text">Kernel PCA</span><span class="tool-text">LLE</span><span class="tool-text">kNN</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard reveal d7">
+      <div class="pband bs"></div>
+      <div class="pbody">
+        <div class="phead">
+          <span class="ptitle">Ocular Disease Recognition from Retinal Fundus Images</span>
+          <a href="https://github.com/Simi-Shrivastava11/ocular-disease-ml" class="pgh" target="_blank">&#8599;</a>
+        </div>
+        <p class="pdesc">Used the ODIR-5K dataset (10,000+ retinal fundus images with patient demographics) for multi-class ocular disease classification, covering EDA, image preprocessing, and CNN training.</p>
+        <div class="tool-icons">
+          <i class="devicon-python-plain colored" title="Python"></i>
+          <i class="devicon-pandas-plain colored" title="Pandas"></i>
+          <i class="devicon-jupyter-plain colored" title="Jupyter"></i>
+          <span class="tool-text">EDA</span><span class="tool-text">CNN</span>
+        </div>
+        <button class="ctoggle" onclick="tog(this)"><span class="cicon">+</span>&nbsp;My contribution</button>
+        <div class="cbox">I handled the EDA: disease prevalence distributions, demographic breakdowns, and statistical tests on correlations between patient characteristics and disease labels. Also wrote the analysis section of the final report.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <h2 class="sec-title reveal">Background</h2>
+  <div class="about-prose">
+    <p class="reveal">I spent five years at <strong>Cognizant</strong> before starting my MS, working on financial data systems for stock exchange clients in India. The stakes were real: a buggy model affected index rebalancing decisions, a slow validation tool meant eight-hour reconciliation cycles. That context shaped how I think about this work.</p>
+    <p class="reveal d1">During those years I built dashboards that clients actually checked before each monthly release, trained classifiers that cut a 25-hour bug validation process to 4 minutes per 100 test cases, and designed a migration tool that turned an 8-hour reconciliation into a 5-minute one. I also presented findings to clients directly each month, which taught me as much about communicating data as analyzing it.</p>
+    <p class="reveal d2">My internship in summer 2025 brought a different kind of problem: building a salary intelligence platform from 20M+ records across 15+ sources, with anomaly detection and ETL pipelines in Spark and ClickHouse. Good reminder that data engineering and data science are usually the same job.</p>
+    <p class="reveal d3">Outside of work I am curious about generative models for structured data, classical NLP foundations, and how production ML systems actually behave under load.</p>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- EDUCATION -->
+<div class="section" id="education">
+  <h2 class="sec-title reveal">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card reveal d1">
+      <div class="edu-band bt"></div>
+      <div class="edu-body">
+        <div class="edu-degree">Master of Science in Data Science</div>
+        <div class="edu-school">University of Maryland, College Park</div>
+        <div class="edu-meta">August 2024 &ndash; May 2026</div>
+        <div class="edu-gpa">GPA &nbsp;3.84 / 4.0</div>
+        <div class="edu-label">Coursework</div>
+        <div class="edu-courses">Machine Learning &middot; Algorithms for Data Science &middot; Big Data Systems &middot; Natural Language Processing &middot; Deep Learning &middot; Cloud Computing</div>
+      </div>
+    </div>
+    <div class="edu-card reveal d2">
+      <div class="edu-band br"></div>
+      <div class="edu-body">
+        <div class="edu-degree">Bachelor of Engineering in Electronics &amp; Telecommunication</div>
+        <div class="edu-school">CSVTU, India</div>
+        <div class="edu-meta">July 2015 &ndash; May 2019</div>
+        <div class="edu-gpa">GPA &nbsp;8.53 / 10.0</div>
+        <div class="edu-label">Coursework</div>
+        <div class="edu-courses">Signals &amp; Systems &middot; Digital Electronics &middot; Communications Engineering &middot; Control Systems &middot; Microprocessors &middot; Electromagnetic Theory</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- SKILLS with icons -->
+<div class="section" id="skills">
+  <h2 class="sec-title reveal">Skills</h2>
+  <div class="skills-section">
+
+    <div class="skill-group reveal">
+      <div class="skill-group-title" style="color:var(--teal)">Languages</div>
+      <div class="skill-items">
+        <div class="skill-chip"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+        <div class="skill-chip"><i class="devicon-azuresqldatabase-plain colored"></i><span>SQL</span></div>
+        <div class="skill-chip"><i class="devicon-r-plain colored"></i><span>R</span></div>
+        <div class="skill-chip"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+        <div class="skill-chip"><i class="devicon-cplusplus-plain colored"></i><span>C / C++</span></div>
+        <div class="skill-chip"><i class="devicon-matlab-plain colored"></i><span>MATLAB</span></div>
+      </div>
+    </div>
+
+    <div class="skill-group reveal d1">
+      <div class="skill-group-title" style="color:var(--indigo)">ML &amp; Deep Learning</div>
+      <div class="skill-items">
+        <div class="skill-chip"><i class="devicon-pytorch-plain colored"></i><span>PyTorch</span></div>
+        <div class="skill-chip"><i class="devicon-scikitlearn-plain colored"></i><span>scikit-learn</span></div>
+        <div class="skill-chip-text">XGBoost</div>
+        <div class="skill-chip-text">CNNs</div>
+        <div class="skill-chip-text">RNNs / LSTMs</div>
+        <div class="skill-chip-text">Diffusion Models</div>
+        <div class="skill-chip-text">NLP</div>
+      </div>
+    </div>
+
+    <div class="skill-group reveal d2">
+      <div class="skill-group-title" style="color:var(--amber)">Analytics</div>
+      <div class="skill-items">
+        <div class="skill-chip"><i class="devicon-pandas-plain colored"></i><span>Pandas</span></div>
+        <div class="skill-chip"><i class="devicon-numpy-plain colored"></i><span>NumPy</span></div>
+        <div class="skill-chip-text">SciPy</div>
+        <div class="skill-chip-text">A/B Testing</div>
+        <div class="skill-chip-text">Statistical Modeling</div>
+        <div class="skill-chip-text">EDA</div>
+        <div class="skill-chip-text">Time-series</div>
+      </div>
+    </div>
+
+    <div class="skill-group reveal d3">
+      <div class="skill-group-title" style="color:var(--pine)">Visualization</div>
+      <div class="skill-items">
+        <div class="skill-chip"><i class="devicon-matplotlib-plain colored"></i><span>Matplotlib</span></div>
+        <div class="skill-chip-text">Tableau</div>
+        <div class="skill-chip-text">Power BI</div>
+        <div class="skill-chip-text">Seaborn</div>
+        <div class="skill-chip-text">Excel</div>
+      </div>
+    </div>
+
+    <div class="skill-group reveal d4">
+      <div class="skill-group-title" style="color:var(--rust)">Data Engineering</div>
+      <div class="skill-items">
+        <div class="skill-chip"><i class="devicon-apachespark-plain colored"></i><span>Spark</span></div>
+        <div class="skill-chip-text">ClickHouse</div>
+        <div class="skill-chip-text">Snowflake</div>
+        <div class="skill-chip-text">Parquet</div>
+        <div class="skill-chip-text">ETL Pipelines</div>
+      </div>
+    </div>
+
+    <div class="skill-group reveal d5">
+      <div class="skill-group-title" style="color:var(--plum)">Cloud &amp; Infra</div>
+      <div class="skill-items">
+        <div class="skill-chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>AWS</span></div>
+        <div class="skill-chip"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+        <div class="skill-chip"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+        <div class="skill-chip"><i class="devicon-jenkins-plain colored"></i><span>Jenkins</span></div>
+        <div class="skill-chip-text">EC2 / S3</div>
+        <div class="skill-chip-text">Lambda</div>
+        <div class="skill-chip-text">ECR / ECS</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <h2>Let's work<br/><em>together.</em></h2>
+      <p>Open to data science and ML roles anywhere in the US, starting summer 2026. Also happy to talk about anything you are building.</p>
+    </div>
+    <div class="contact-links reveal d2">
+      <a href="mailto:simish98@umd.edu" class="contact-link">
+        <span class="cl-label">Email</span><span class="cl-val">simish98@umd.edu</span><span class="cl-arrow">&#8599;</span>
+      </a>
+      <a href="https://github.com/Simi-Shrivastava11" class="contact-link" target="_blank">
+        <span class="cl-label">GitHub</span><span class="cl-val">Simi-Shrivastava11</span><span class="cl-arrow">&#8599;</span>
+      </a>
+      <a href="https://www.linkedin.com/in/simi-shrivastava" class="contact-link" target="_blank">
+        <span class="cl-label">LinkedIn</span><span class="cl-val">simi-shrivastava</span><span class="cl-arrow">&#8599;</span>
+      </a>
+      <a href="SimiShrivastava_Resume.pdf" class="contact-link" target="_blank">
+        <span class="cl-label">Resume</span><span class="cl-val">PDF download</span><span class="cl-arrow">&#8599;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>Simi Shrivastava</p>
+    <p>Open to roles anywhere in the US</p>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+function tog(btn){
+  const box=btn.nextElementSibling;
+  const open=box.classList.toggle('open');
+  btn.classList.toggle('open',open);
+  btn.querySelector('.cicon').textContent=open?'×':'+';
+}
+</script>
 </body>
 </html>
