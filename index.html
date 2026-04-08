@@ -56,9 +56,9 @@ nav{position:sticky;top:0;z-index:50;background:rgba(26,23,20,.9);backdrop-filte
 
 .hero{max-width:1140px;margin:0 auto;padding:5.5rem 2rem 6rem;display:flex;align-items:flex-start;justify-content:space-between;gap:3rem}
 .hero-left{flex:1;min-width:0}
-.hero-photo{flex-shrink:0;width:260px;height:320px;border-radius:16px;overflow:hidden;border:2px solid var(--border-card);align-self:flex-start;margin-top:2rem}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 87%}
-  
+.hero-photo{flex-shrink:0;width:260px;height:320px;border-radius:16px;overflow:hidden;border:2px solid var(--border-card);align-self:flex-start;margin-top:1rem}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 75%}
+
 .hero-name{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:1.2rem;letter-spacing:-.01em;max-width:700px}
 .hero-name em{font-style:italic;color:var(--lilac);font-weight:400}
 .hero-bio{font-size:1rem;color:var(--muted);line-height:1.9;max-width:540px;margin-bottom:2.25rem}
@@ -73,14 +73,14 @@ nav{position:sticky;top:0;z-index:50;background:rgba(26,23,20,.9);backdrop-filte
 .sec-title{font-family:var(--serif);font-size:1.7rem;font-weight:400;color:var(--ink);margin-bottom:2.75rem}
 
 .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-.pcard{background:var(--card);border:1px solid var(--border-card);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
+.pcard{background:var(--card);border:1px solid var(--border-card);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s;text-decoration:none;cursor:pointer;color:inherit}
 .pcard:hover{box-shadow:0 8px 32px rgba(0,0,0,.35);transform:translateY(-2px)}
+.pcard:hover .pgh{color:var(--ink)}
 .pband{height:5px;flex-shrink:0}
 .pbody{padding:1.5rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
 .phead{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem}
 .ptitle{font-family:var(--serif);font-size:.95rem;font-weight:400;color:var(--ink);line-height:1.4;flex:1}
-.pgh{font-size:.9rem;color:var(--soft);flex-shrink:0;transition:color .2s;margin-top:.1rem}
-.pgh:hover{color:var(--ink)}
+.pgh{font-size:.9rem;color:var(--soft);flex-shrink:0;margin-top:.1rem;transition:color .2s}
 .wip{display:inline-flex;align-items:center;gap:.32rem;font-family:var(--mono);font-size:.57rem;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);background:var(--amber-dim);border:1px solid rgba(196,154,58,.22);padding:.15rem .5rem;border-radius:2px;width:fit-content}
 .wipdot{width:5px;height:5px;border-radius:50%;background:var(--amber);animation:blink 1.8s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
@@ -137,15 +137,15 @@ footer{background:#0f0d0b;border-top:1px solid rgba(255,255,255,.04);padding:1.4
 .footer-inner{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
 footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacing:.05em}
 
-@media(min-width:1400px){.hero{padding:7rem 2rem 8rem}.hero-name{font-size:4rem}}
+@media(min-width:1400px){.hero{padding:7rem 2rem 8rem}.hero-name{font-size:3.2rem}}
 @media(max-width:960px){
   .project-grid{grid-template-columns:repeat(2,1fr)}
   .contact-inner{grid-template-columns:1fr;gap:2.5rem}
-  .hero-photo{width:180px;height:180px}
+  .hero-photo{width:200px;height:250px}
 }
 @media(max-width:768px){
   .edu-grid{grid-template-columns:1fr}
-  .hero-photo{width:150px;height:150px}
+  .hero-photo{width:170px;height:210px}
 }
 @media(max-width:580px){
   .project-grid{grid-template-columns:1fr}
@@ -197,7 +197,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
   </div>
   <div class="hero-photo reveal d3">
     <!-- Replace YOUR_PHOTO.jpg with your actual image filename -->
-    <img src="profile1.jpeg" alt="Simi Shrivastava"/>
+    <img src="YOUR_PHOTO.jpg" alt="Simi Shrivastava"/>
   </div>
 </div>
 
@@ -207,26 +207,26 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
   <h2 class="sec-title reveal">Projects</h2>
   <div class="project-grid">
 
-    <div class="pcard reveal d1">
+    <a class="pcard reveal d1" href="https://github.com/Simi-Shrivastava11/YOLOv8-via-AWS-ECS-Fargate" target="_blank">
       <div class="pband bl"></div>
       <div class="pbody">
         <div class="phead">
           <span class="ptitle">YOLOv8 on AWS ECS/Fargate: Inference Serving at Scale</span>
-          <a href="https://github.com/Simi-Shrivastava11/YOLOv8-via-AWS-ECS-Fargate" class="pgh" target="_blank">&#8599;</a>
+          <span class="pgh">&#8599;</span>
         </div>
         <p class="pdesc">Compared scalable ECS/Fargate deployment against a single EC2 baseline for YOLOv8 object detection. Ran 5,000 COCO 2017 images through quiet, sustained, and burst traffic patterns while measuring p50/p95/p99 latency and CPU utilization in CloudWatch.</p>
         <div class="card-tags">
           <span class="ctag">Python</span><span class="ctag">Docker</span><span class="ctag">Flask</span><span class="ctag">AWS ECS</span><span class="ctag">ECR</span><span class="ctag">YOLOv8</span>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="pcard reveal d2">
+    <a class="pcard reveal d2" href="https://github.com/Simi-Shrivastava11/tabddpm-hospital-readmission-prediction" target="_blank">
       <div class="pband ba"></div>
       <div class="pbody">
         <div class="phead">
           <span class="ptitle">TabDDPM: Can Diffusion Models Fix Clinical Class Imbalance?</span>
-          <a href="https://github.com/Simi-Shrivastava11/tabddpm-hospital-readmission-prediction" class="pgh" target="_blank">&#8599;</a>
+          <span class="pgh">&#8599;</span>
         </div>
         <div class="wip"><span class="wipdot"></span>In progress</div>
         <p class="pdesc">Hospital readmission dataset with an 89/11 class split across 101,766 patients. Comparing TabDDPM, SMOTE, and CTGAN for generating synthetic minority-class records, with XGBoost evaluated on F1 for the rare class and AUC-ROC.</p>
@@ -234,77 +234,77 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
           <span class="ctag">PyTorch</span><span class="ctag">TabDDPM</span><span class="ctag">XGBoost</span><span class="ctag">SMOTE</span><span class="ctag">CTGAN</span>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="pcard reveal d3">
+    <a class="pcard reveal d3" href="https://github.com/Simi-Shrivastava11/Sentiment-Classification-RNN" target="_blank">
       <div class="pband br"></div>
       <div class="pbody">
         <div class="phead">
           <span class="ptitle">What Actually Drives RNN Performance? A 36-Config Study</span>
-          <a href="https://github.com/Simi-Shrivastava11/Sentiment-Classification-RNN" class="pgh" target="_blank">&#8599;</a>
+          <span class="pgh">&#8599;</span>
         </div>
         <p class="pdesc">Tested 36 configurations of RNN, LSTM, and BiLSTM on IMDB sentiment (50K reviews). Varied optimizer, activation function, sequence length, and gradient clipping. Key finding: switching Adam to SGD hurt more than switching a vanilla RNN to a BiLSTM helped. Best config: 81.6% accuracy.</p>
         <div class="card-tags">
           <span class="ctag">PyTorch</span><span class="ctag">LSTM</span><span class="ctag">BiLSTM</span><span class="ctag">NLTK</span><span class="ctag">Python</span>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="pcard reveal d4">
+    <a class="pcard reveal d4" href="https://github.com/Simi-Shrivastava11/bpe-semantic-search" target="_blank">
       <div class="pband bp"></div>
       <div class="pbody">
         <div class="phead">
           <span class="ptitle">Semantic Search Engine with BPE Tokenization</span>
-          <a href="https://github.com/Simi-Shrivastava11/bpe-semantic-search" class="pgh" target="_blank">&#8599;</a>
+          <span class="pgh">&#8599;</span>
         </div>
         <p class="pdesc">Built from scratch over Project Gutenberg texts. BPE handles subword tokenization, edit-distance autocorrect handles noisy queries, and TF-IDF cosine similarity handles ranking. Searching "luve" still surfaces results about love. Index is cached after the first build.</p>
         <div class="card-tags">
           <span class="ctag">Python</span><span class="ctag">BPE</span><span class="ctag">TF-IDF</span><span class="ctag">Edit Distance</span><span class="ctag">Cosine Similarity</span>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="pcard reveal d5">
+    <a class="pcard reveal d5" href="https://github.com/Simi-Shrivastava11/Language-Modeling-with-NGrams" target="_blank">
       <div class="pband bro"></div>
       <div class="pbody">
         <div class="phead">
           <span class="ptitle">N-Gram Language Modeling on Penn Treebank</span>
-          <a href="https://github.com/Simi-Shrivastava11/Language-Modeling-with-NGrams" class="pgh" target="_blank">&#8599;</a>
+          <span class="pgh">&#8599;</span>
         </div>
         <p class="pdesc">Implemented unigram through 4-gram models and compared Laplace smoothing, linear interpolation, and Stupid Backoff by perplexity on PTB. Outputs a comparison chart and generates sample sentences from the best model so the qualitative difference is visible, not just numeric.</p>
         <div class="card-tags">
           <span class="ctag">Python</span><span class="ctag">N-grams</span><span class="ctag">Laplace Smoothing</span><span class="ctag">Interpolation</span><span class="ctag">NumPy</span>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="pcard reveal d6">
+    <a class="pcard reveal d6" href="https://github.com/Simi-Shrivastava11/mnist-representation-learning-matlab" target="_blank">
       <div class="pband bt"></div>
       <div class="pbody">
         <div class="phead">
           <span class="ptitle">Does Dimensionality Reduction Help Classify MNIST?</span>
-          <a href="https://github.com/Simi-Shrivastava11/mnist-representation-learning-matlab" class="pgh" target="_blank">&#8599;</a>
+          <span class="pgh">&#8599;</span>
         </div>
         <p class="pdesc">Compared PCA, Kernel PCA (Nystrom approximation), LLE, and raw 784-pixel vectors before kNN classification. PCA compressed inputs to 44 dimensions and beat raw pixels: 97.23% vs 96.91%. Tracks accuracy and runtime together so the tradeoffs are explicit.</p>
         <div class="card-tags">
           <span class="ctag">MATLAB</span><span class="ctag">PCA</span><span class="ctag">Kernel PCA</span><span class="ctag">LLE</span><span class="ctag">kNN</span>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="pcard reveal d7">
+    <a class="pcard reveal d7" href="https://github.com/Simi-Shrivastava11/ocular-disease-ml" target="_blank">
       <div class="pband bm"></div>
       <div class="pbody">
         <div class="phead">
           <span class="ptitle">Ocular Disease Recognition from Retinal Fundus Images</span>
-          <a href="https://github.com/Simi-Shrivastava11/ocular-disease-ml" class="pgh" target="_blank">&#8599;</a>
+          <span class="pgh">&#8599;</span>
         </div>
         <p class="pdesc">Used the ODIR-5K dataset (10,000+ retinal fundus images with patient demographics) for multi-class ocular disease classification, covering EDA, image preprocessing, and CNN training.</p>
         <div class="card-tags">
           <span class="ctag">Python</span><span class="ctag">Pandas</span><span class="ctag">Seaborn</span><span class="ctag">EDA</span><span class="ctag">Hypothesis Testing</span><span class="ctag">CNN</span>
         </div>
       </div>
-    </div>
+    </a>
 
   </div>
 </div>
