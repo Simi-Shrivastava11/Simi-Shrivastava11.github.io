@@ -181,8 +181,14 @@ nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:bl
 .pill-rose{background:var(--rose-dim);color:var(--rose);border-color:rgba(224,120,152,.2)}
 
 /* Outside of work */
+.outside-wrap{background:#fffdf5;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+body.light .outside-wrap{background:#fbfbfb}
+body:not(.light) .outside-wrap{background:#13111a}
+.outside-tagline{font-size:.95rem;color:var(--muted);margin-bottom:2.25rem}
 .hobby-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.85rem}
 .hobby-card{background:var(--card);border:1px solid var(--border-card);border-radius:10px;padding:1.1rem}
+body.light .hobby-card{background:#fff}
+body:not(.light) .hobby-card{background:#1c1a24}
 .hobby-icon{font-size:1.1rem;margin-bottom:.5rem}
 .hobby-title{font-size:.85rem;font-weight:500;color:var(--ink);margin-bottom:.2rem}
 .hobby-desc{font-size:.72rem;color:var(--muted);line-height:1.6}
@@ -211,8 +217,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
   .contact-inner{grid-template-columns:1fr;gap:2.5rem}
   .hero-photo{width:200px;height:250px}
   .hobby-grid{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:768px){
+}@media(max-width:768px){
   .hero-photo{width:170px;height:210px}
   .skill-row{gap:1rem}
   .sr-label{width:100px}
@@ -634,13 +639,15 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
 <hr class="sep"/>
 
 <!-- OUTSIDE OF WORK -->
+<div class="outside-wrap">
 <div class="section" id="outside">
   <h2 class="sec-title reveal">Outside of work</h2>
+  <p class="outside-tagline reveal d1">What I do when I'm not staring at a dataset.</p>
   <div class="hobby-grid">
     <div class="hobby-card reveal d1">
       <div class="hobby-icon" style="color:var(--rust)"><i class="fa-solid fa-utensils"></i></div>
       <div class="hobby-title">Cooking</div>
-      <div class="hobby-desc">Always experimenting, usually inspired by something I just watched</div>
+      <div class="hobby-desc">Mostly Instagram recipes I have no business attempting</div>
     </div>
     <div class="hobby-card reveal d2">
       <div class="hobby-icon" style="color:var(--lilac)"><i class="fa-solid fa-palette"></i></div>
@@ -655,7 +662,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
     <div class="hobby-card reveal d4">
       <div class="hobby-icon" style="color:var(--teal)"><i class="fa-solid fa-keyboard"></i></div>
       <div class="hobby-title">Wordle</div>
-      <div class="hobby-desc">Every morning, non-negotiable</div>
+      <div class="hobby-desc">Proud of a 2-attempt win I will not stop talking about</div>
     </div>
     <div class="hobby-card reveal d5">
       <div class="hobby-icon" style="color:var(--pine)"><i class="fa-solid fa-gamepad"></i></div>
@@ -663,6 +670,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       <div class="hobby-desc">Competitive. Will not apologize for Draw Four</div>
     </div>
   </div>
+</div>
 </div>
 
 <!-- CONTACT -->
