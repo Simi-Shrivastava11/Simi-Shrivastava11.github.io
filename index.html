@@ -7,10 +7,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-/* DARK THEME (default) */
 :root{
   --bg:#1a1714;
   --card:#242018;
@@ -38,7 +38,6 @@
   --mono:'DM Mono',monospace;
 }
 
-/* LIGHT THEME */
 body.light{
   --bg:#f5f0e8;
   --card:#ffffff;
@@ -80,7 +79,6 @@ nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:bl
 .nav-links a:hover{color:var(--lilac)}
 .nav-resume{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--lilac);border:1.5px solid var(--lilac);padding:.3rem .85rem;border-radius:3px;transition:background .2s,color .2s}
 .nav-resume:hover{background:var(--lilac);color:var(--bg)}
-
 .theme-toggle{background:none;border:1px solid var(--border-card);border-radius:3px;cursor:pointer;padding:.32rem .55rem;display:flex;align-items:center;justify-content:center;transition:border-color .2s;color:var(--muted)}
 .theme-toggle:hover{border-color:var(--soft);color:var(--ink)}
 .theme-toggle svg{width:15px;height:15px;fill:currentColor;display:block}
@@ -89,10 +87,11 @@ nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:bl
 .hero-left{flex:1;min-width:0}
 .hero-photo{flex-shrink:0;width:260px;height:320px;border-radius:16px;overflow:hidden;border:2px solid var(--border-card);align-self:flex-start;margin-top:1rem}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 75%}
-
 .hero-name{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:1.2rem;letter-spacing:-.01em;max-width:700px}
 .hero-name em{font-style:italic;color:var(--lilac);font-weight:400}
-.hero-bio{font-size:1rem;color:var(--muted);line-height:1.9;max-width:540px;margin-bottom:2.25rem}
+.hero-bio{font-size:1rem;color:var(--muted);line-height:1.9;max-width:540px;margin-bottom:1.1rem}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.75rem}
+.hero-pill{font-size:.78rem;padding:.28rem .85rem;border-radius:50px;background:rgba(128,128,128,.06);border:1px solid var(--border-card);color:var(--muted)}
 .hero-ctas{display:flex;gap:.65rem;flex-wrap:wrap}
 .cta-primary{display:inline-flex;align-items:center;background:var(--lilac);color:var(--bg);font-size:.8rem;font-weight:500;padding:.6rem 1.35rem;border-radius:3px;transition:opacity .2s}
 .cta-primary:hover{opacity:.88}
@@ -103,18 +102,24 @@ nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:bl
 .section{max-width:1140px;margin:0 auto;padding:4.5rem 2rem}
 .sec-title{font-family:var(--serif);font-size:1.7rem;font-weight:400;color:var(--ink);margin-bottom:2.75rem}
 
+/* Project cards */
 .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
 .pcard{background:var(--card);border:1px solid var(--border-card);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s;text-decoration:none;cursor:pointer;color:inherit}
 .pcard:hover{box-shadow:0 8px 32px rgba(0,0,0,.2);transform:translateY(-2px)}
 .pcard:hover .pgh{color:var(--ink)}
 .pband{height:5px;flex-shrink:0}
-.pbody{padding:1.5rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
+.pbody{padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
 .phead{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem}
 .ptitle{font-family:var(--serif);font-size:.95rem;font-weight:400;color:var(--ink);line-height:1.4;flex:1}
 .pgh{font-size:.9rem;color:var(--soft);flex-shrink:0;margin-top:.1rem;transition:color .2s}
+.psub{font-size:.76rem;color:var(--soft);line-height:1.5;font-style:italic}
 .wip{display:inline-flex;align-items:center;gap:.32rem;font-family:var(--mono);font-size:.57rem;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);background:var(--amber-dim);border:1px solid rgba(196,154,58,.22);padding:.15rem .5rem;border-radius:2px;width:fit-content}
 .wipdot{width:5px;height:5px;border-radius:50%;background:var(--amber);animation:blink 1.8s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.pmetrics{display:flex;flex-wrap:wrap;gap:.4rem}
+.pmet{background:rgba(128,128,128,.05);border:1px solid var(--border-card);border-radius:4px;padding:.25rem .65rem}
+.pmet strong{display:block;font-family:var(--mono);font-size:.76rem;font-weight:400;color:var(--ink);letter-spacing:.02em}
+.pmet span{font-size:.58rem;color:var(--soft)}
 .pdesc{font-size:.84rem;color:var(--muted);line-height:1.78;flex:1}
 .card-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.1rem}
 .ctag{font-family:var(--mono);font-size:.6rem;color:var(--muted);background:rgba(128,128,128,.06);border:1px solid var(--border-card);padding:.18rem .5rem;border-radius:3px;letter-spacing:.03em}
@@ -122,35 +127,67 @@ nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:bl
 .bl{background:var(--lilac)}.br{background:var(--rust)}.bt{background:var(--teal)}
 .bp{background:var(--pine)}.ba{background:var(--amber)}.bro{background:var(--rose)}.bm{background:var(--soft)}
 
-.about-prose{max-width:660px}
-.about-prose p{font-size:.97rem;color:var(--muted);line-height:1.95;margin-bottom:1.35rem}
-.about-prose p:last-child{margin-bottom:0}
-.about-prose strong{color:var(--ink);font-weight:500}
+/* Timeline — Option B */
+.timeline{position:relative;max-width:740px;margin:0 auto}
+.timeline::before{content:'';position:absolute;left:18px;top:0;bottom:0;width:1px;background:var(--border-card)}
+.tnode{display:flex;gap:1.5rem;margin-bottom:1.5rem;position:relative;align-items:flex-start}
+.tnode:last-child{margin-bottom:0}
+.tnode-dot{width:10px;height:10px;border-radius:50%;background:var(--lilac);border:2px solid var(--bg);flex-shrink:0;margin-top:1.25rem;position:relative;z-index:2}
+.tnode-side{flex-shrink:0;width:90px;text-align:right;padding-top:1.1rem}
+.tnode-side-type{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);display:block;margin-bottom:.2rem}
+.tnode-side-dates{font-family:var(--mono);font-size:.62rem;color:var(--muted);display:block;line-height:1.4}
+.tnode-content{flex:1;background:var(--card);border:1px solid var(--border-card);border-radius:10px;padding:1.2rem 1.4rem}
+.ttype{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:.2rem}
+.tdates{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-bottom:.3rem}
+.tname{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--ink);margin-bottom:.1rem;line-height:1.3}
+.tsub{font-size:.78rem;color:var(--muted);margin-bottom:.75rem}
+.tprog{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.75rem;align-items:center}
+.tpill{font-size:.68rem;padding:.18rem .6rem;border-radius:2px;background:var(--lilac-dim);color:var(--lilac);border:1px solid rgba(196,181,244,.2)}
+.tarr{color:var(--soft);font-size:.75rem}
+.tprose{font-size:.84rem;color:var(--muted);line-height:1.85;margin-bottom:.85rem}
+.tmets{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:.85rem}
+.tmet{background:rgba(128,128,128,.05);border:1px solid var(--border-card);border-radius:4px;padding:.3rem .75rem}
+.tmet strong{display:block;font-family:var(--mono);font-size:.8rem;font-weight:400;color:var(--ink)}
+.tmet span{font-size:.6rem;color:var(--soft)}
+.tgpa{display:inline-block;font-family:var(--mono);font-size:.67rem;background:var(--lilac-dim);color:var(--lilac);padding:.2rem .65rem;border-radius:2px;margin-bottom:.75rem;letter-spacing:.05em;border:1px solid rgba(196,181,244,.2)}
+.ttags{display:flex;flex-wrap:wrap;gap:.35rem}
+.ttag{font-family:var(--mono);font-size:.6rem;color:var(--muted);background:rgba(128,128,128,.06);border:1px solid var(--border-card);padding:.18rem .5rem;border-radius:3px;letter-spacing:.03em}
+.ta-block{border-top:1px solid var(--border-card);margin-top:.85rem;padding-top:.75rem}
+.ta-lbl{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:.45rem}
+.ta-row{font-size:.78rem;color:var(--muted);line-height:1.75}
+.ta-row em{font-style:normal;color:var(--soft);font-size:.7rem}
 
-.skills-section{display:flex;flex-direction:column;gap:2rem}
-.skill-group-title{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.9rem;font-weight:400}
+/* Skills */
+.skill-rows{display:flex;flex-direction:column}
+.skill-row{display:flex;gap:1.75rem;padding:.9rem 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.skill-row:last-child{border-bottom:none}
+.sr-label{width:130px;flex-shrink:0;padding-left:12px;display:flex;flex-direction:column;gap:5px;padding-top:3px}
+.sr-label i{font-size:15px}
+.sr-label span{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sr-lang{border-left:2px solid var(--lilac)}.sr-lang i{color:var(--lilac)}
+.sr-ml{border-left:2px solid var(--rust)}.sr-ml i{color:var(--rust)}
+.sr-ana{border-left:2px solid var(--amber)}.sr-ana i{color:var(--amber)}
+.sr-viz{border-left:2px solid var(--pine)}.sr-viz i{color:var(--pine)}
+.sr-eng{border-left:2px solid var(--teal)}.sr-eng i{color:var(--teal)}
+.sr-cloud{border-left:2px solid var(--rose)}.sr-cloud i{color:var(--rose)}
 .skill-pills{display:flex;flex-wrap:wrap;gap:.5rem}
 .pill{font-size:.82rem;padding:.35rem .85rem;border-radius:50px;border:1px solid transparent;cursor:default;transition:opacity .2s}
 .pill:hover{opacity:.8}
-.pill-lilac{background:var(--lilac-dim);color:var(--lilac);border-color:rgba(124,95,196,.2)}
-.pill-rust{background:var(--rust-dim);color:var(--rust);border-color:rgba(184,74,42,.2)}
-.pill-teal{background:var(--teal-dim);color:var(--teal);border-color:rgba(26,122,110,.2)}
-.pill-amber{background:var(--amber-dim);color:var(--amber);border-color:rgba(122,90,16,.2)}
-.pill-pine{background:var(--pine-dim);color:var(--pine);border-color:rgba(30,107,64,.2)}
-.pill-rose{background:var(--rose-dim);color:var(--rose);border-color:rgba(184,77,106,.2)}
+.pill-lilac{background:var(--lilac-dim);color:var(--lilac);border-color:rgba(196,181,244,.2)}
+.pill-rust{background:var(--rust-dim);color:var(--rust);border-color:rgba(212,114,74,.2)}
+.pill-teal{background:var(--teal-dim);color:var(--teal);border-color:rgba(58,184,168,.2)}
+.pill-amber{background:var(--amber-dim);color:var(--amber);border-color:rgba(196,154,58,.2)}
+.pill-pine{background:var(--pine-dim);color:var(--pine);border-color:rgba(90,171,122,.2)}
+.pill-rose{background:var(--rose-dim);color:var(--rose);border-color:rgba(224,120,152,.2)}
 
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
-.edu-card{background:var(--card);border:1px solid var(--border-card);border-radius:10px;overflow:hidden;transition:box-shadow .25s}
-.edu-card:hover{box-shadow:0 6px 28px rgba(0,0,0,.12)}
-.edu-band{height:5px}
-.edu-body{padding:1.75rem 2rem}
-.edu-degree{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:.3rem;line-height:1.3}
-.edu-school{font-size:.85rem;font-weight:500;color:var(--lilac);margin-bottom:.2rem}
-.edu-meta{font-family:var(--mono);font-size:.62rem;color:var(--soft);margin-bottom:1rem}
-.edu-gpa{display:inline-block;font-family:var(--mono);font-size:.67rem;background:var(--lilac-dim);color:var(--lilac);padding:.2rem .65rem;border-radius:2px;margin-bottom:1rem;letter-spacing:.05em;border:1px solid rgba(124,95,196,.2)}
-.edu-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:.4rem}
-.edu-courses{font-size:.82rem;color:var(--muted);line-height:1.75}
+/* Outside of work */
+.hobby-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.85rem}
+.hobby-card{background:var(--card);border:1px solid var(--border-card);border-radius:10px;padding:1.1rem}
+.hobby-icon{font-size:1.1rem;margin-bottom:.5rem}
+.hobby-title{font-size:.85rem;font-weight:500;color:var(--ink);margin-bottom:.2rem}
+.hobby-desc{font-size:.72rem;color:var(--muted);line-height:1.6}
 
+/* Contact */
 .contact-wrap{background:var(--bg);padding:5.5rem 2rem;border-top:1px solid var(--border)}
 .contact-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .contact-left h2{font-family:var(--serif);font-size:2.4rem;font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:.85rem}
@@ -173,10 +210,16 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
   .project-grid{grid-template-columns:repeat(2,1fr)}
   .contact-inner{grid-template-columns:1fr;gap:2.5rem}
   .hero-photo{width:200px;height:250px}
+  .hobby-grid{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:768px){
-  .edu-grid{grid-template-columns:1fr}
   .hero-photo{width:170px;height:210px}
+  .skill-row{gap:1rem}
+  .sr-label{width:100px}
+}
+@media(max-width:640px){
+  .hobby-grid{grid-template-columns:repeat(2,1fr)}
+  .tnode-side{width:60px}
 }
 @media(max-width:580px){
   .project-grid{grid-template-columns:1fr}
@@ -202,9 +245,8 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
     <a href="#" class="nav-logo">Simi Shrivastava</a>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="SimiShrivastava_Resume.pdf" class="nav-resume" target="_blank">Resume</a></li>
       <li>
@@ -225,6 +267,12 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
     <p class="hero-bio reveal d1">
       Finishing my MS in Data Science at the University of Maryland, with five years of data and analytics experience in financial services.
     </p>
+    <div class="hero-pills reveal d1">
+      <span class="hero-pill">Python</span>
+      <span class="hero-pill">Spark</span>
+      <span class="hero-pill">SQL</span>
+      <span class="hero-pill">Excel</span>
+    </div>
     <div class="hero-ctas reveal d2">
       <a href="#projects" class="cta-primary">See my work &darr;</a>
       <a href="https://github.com/Simi-Shrivastava11" class="cta-ghost" target="_blank">GitHub &nearr;</a>
@@ -249,6 +297,11 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
           <span class="ptitle">YOLOv8 on AWS ECS/Fargate: Inference Serving at Scale</span>
           <span class="pgh">&#8599;</span>
         </div>
+        <p class="psub">Scalable inference benchmarked across quiet, sustained, and burst traffic on AWS</p>
+        <div class="pmetrics">
+          <div class="pmet"><strong>5,000</strong><span>COCO images tested</span></div>
+          <div class="pmet"><strong>p50 / p95 / p99</strong><span>latency tracked</span></div>
+        </div>
         <p class="pdesc">Compared scalable ECS/Fargate deployment against a single EC2 baseline for YOLOv8 object detection. Ran 5,000 COCO 2017 images through quiet, sustained, and burst traffic patterns while measuring p50/p95/p99 latency and CPU utilization in CloudWatch.</p>
         <div class="card-tags">
           <span class="ctag">Python</span><span class="ctag">Docker</span><span class="ctag">Flask</span><span class="ctag">AWS ECS</span><span class="ctag">ECR</span><span class="ctag">YOLOv8</span>
@@ -263,7 +316,12 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
           <span class="ptitle">TabDDPM: Can Diffusion Models Fix Clinical Class Imbalance?</span>
           <span class="pgh">&#8599;</span>
         </div>
+        <p class="psub">Comparing synthetic data generation methods on an imbalanced hospital readmission dataset</p>
         <div class="wip"><span class="wipdot"></span>In progress</div>
+        <div class="pmetrics">
+          <div class="pmet"><strong>101,766</strong><span>patients</span></div>
+          <div class="pmet"><strong>89 / 11</strong><span>class split</span></div>
+        </div>
         <p class="pdesc">Hospital readmission dataset with an 89/11 class split across 101,766 patients. Comparing TabDDPM, SMOTE, and CTGAN for generating synthetic minority-class records, with XGBoost evaluated on F1 for the rare class and AUC-ROC.</p>
         <div class="card-tags">
           <span class="ctag">PyTorch</span><span class="ctag">TabDDPM</span><span class="ctag">XGBoost</span><span class="ctag">SMOTE</span><span class="ctag">CTGAN</span>
@@ -278,7 +336,12 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
           <span class="ptitle">What Actually Drives RNN Performance? A 36-Config Study</span>
           <span class="pgh">&#8599;</span>
         </div>
-        <p class="pdesc">Tested 36 configurations of RNN, LSTM, and BiLSTM on IMDB sentiment (50K reviews). Varied optimizer, activation function, sequence length, and gradient clipping. Key finding: switching Adam to SGD hurt more than switching a vanilla RNN to a BiLSTM helped. Best config: 81.6% accuracy.</p>
+        <p class="psub">A 36-configuration ablation on IMDB sentiment — optimizer choice over architecture</p>
+        <div class="pmetrics">
+          <div class="pmet"><strong>36</strong><span>configs tested</span></div>
+          <div class="pmet"><strong>81.6%</strong><span>best accuracy</span></div>
+        </div>
+        <p class="pdesc">Tested 36 configurations of RNN, LSTM, and BiLSTM on IMDB sentiment (50K reviews). Varied optimizer, activation function, sequence length, and gradient clipping. Key finding: switching Adam to SGD hurt more than switching a vanilla RNN to a BiLSTM helped.</p>
         <div class="card-tags">
           <span class="ctag">PyTorch</span><span class="ctag">LSTM</span><span class="ctag">BiLSTM</span><span class="ctag">NLTK</span><span class="ctag">Python</span>
         </div>
@@ -292,7 +355,8 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
           <span class="ptitle">Semantic Search Engine with BPE Tokenization</span>
           <span class="pgh">&#8599;</span>
         </div>
-        <p class="pdesc">Built from scratch over Project Gutenberg texts. BPE handles subword tokenization, edit-distance autocorrect handles noisy queries, and TF-IDF cosine similarity handles ranking. Searching "luve" still surfaces results about love. Index is cached after the first build.</p>
+        <p class="psub">Built from scratch over Project Gutenberg texts, handles subword tokenization and noisy queries</p>
+        <p class="pdesc">BPE handles subword tokenization, edit-distance autocorrect handles noisy queries, and TF-IDF cosine similarity handles ranking. Searching "luve" still surfaces results about love. Index is cached after the first build.</p>
         <div class="card-tags">
           <span class="ctag">Python</span><span class="ctag">BPE</span><span class="ctag">TF-IDF</span><span class="ctag">Edit Distance</span><span class="ctag">Cosine Similarity</span>
         </div>
@@ -306,6 +370,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
           <span class="ptitle">N-Gram Language Modeling on Penn Treebank</span>
           <span class="pgh">&#8599;</span>
         </div>
+        <p class="psub">Four smoothing strategies on PTB, compared by perplexity from unigram to 4-gram</p>
         <p class="pdesc">Implemented unigram through 4-gram models and compared Laplace smoothing, linear interpolation, and Stupid Backoff by perplexity on PTB. Outputs a comparison chart and generates sample sentences from the best model so the qualitative difference is visible, not just numeric.</p>
         <div class="card-tags">
           <span class="ctag">Python</span><span class="ctag">N-grams</span><span class="ctag">Laplace Smoothing</span><span class="ctag">Interpolation</span><span class="ctag">NumPy</span>
@@ -319,6 +384,11 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
         <div class="phead">
           <span class="ptitle">Does Dimensionality Reduction Help Classify MNIST?</span>
           <span class="pgh">&#8599;</span>
+        </div>
+        <p class="psub">PCA, Kernel PCA, LLE, and raw pixels compared before kNN classification</p>
+        <div class="pmetrics">
+          <div class="pmet"><strong>97.23%</strong><span>PCA accuracy</span></div>
+          <div class="pmet"><strong>44 dims</strong><span>from 784</span></div>
         </div>
         <p class="pdesc">Compared PCA, Kernel PCA (Nystrom approximation), LLE, and raw 784-pixel vectors before kNN classification. PCA compressed inputs to 44 dimensions and beat raw pixels: 97.23% vs 96.91%. Tracks accuracy and runtime together so the tradeoffs are explicit.</p>
         <div class="card-tags">
@@ -334,7 +404,12 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
           <span class="ptitle">Ocular Disease Recognition from Retinal Fundus Images</span>
           <span class="pgh">&#8599;</span>
         </div>
-        <p class="pdesc">Used the ODIR-5K dataset (10,000+ retinal fundus images with patient demographics) for multi-class ocular disease classification, covering EDA, image preprocessing, and CNN training.</p>
+        <p class="psub">Multi-class disease classification from 10,000+ retinal fundus images with patient demographics</p>
+        <div class="pmetrics">
+          <div class="pmet"><strong>10,000+</strong><span>fundus images</span></div>
+          <div class="pmet"><strong>91%</strong><span>classification accuracy</span></div>
+        </div>
+        <p class="pdesc">Used the ODIR-5K dataset for multi-class ocular disease classification, covering EDA, image preprocessing, and CNN training with hyperparameter tuning, regularization, and model evaluation using confusion matrices and ROC curves.</p>
         <div class="card-tags">
           <span class="ctag">Python</span><span class="ctag">Pandas</span><span class="ctag">Seaborn</span><span class="ctag">EDA</span><span class="ctag">Hypothesis Testing</span><span class="ctag">CNN</span>
         </div>
@@ -346,24 +421,127 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
 
 <hr class="sep"/>
 
-<div class="section" id="about">
-  <h2 class="sec-title reveal">Background</h2>
-  <div class="about-prose">
-    <p class="reveal">I spent five years at <strong>Cognizant</strong> before starting my MS, working on financial data systems for stock exchange clients in India. The stakes were real: a buggy model affected index rebalancing decisions, a slow validation tool meant eight-hour reconciliation cycles. Most of my best lessons came from data that was messier than the textbooks assumed.</p>
-    <p class="reveal d1">During those years I built dashboards that clients actually checked before each monthly release, trained classifiers that cut a 25-hour bug validation process to 4 minutes per 100 test cases, and designed a migration tool that turned an 8-hour reconciliation into a 5-minute one. I also presented findings to clients directly each month, which taught me as much about communicating data as analyzing it.</p>
-    <p class="reveal d2">My internship in summer 2025 brought a different kind of problem: building a salary intelligence platform from 20M+ records across 15+ sources, with anomaly detection and ETL pipelines in Spark and ClickHouse. Good reminder that data engineering and data science are usually the same job.</p>
-    <p class="reveal d3">Outside of work I am curious about generative models for structured data, classical NLP foundations, and how production ML systems actually behave under load.</p>
+<!-- EXPERIENCE: The story so far -->
+<div class="section" id="experience">
+  <h2 class="sec-title reveal">The story so far</h2>
+  <div class="timeline">
+
+    <!-- CSVTU -->
+    <div class="tnode reveal">
+      <div class="tnode-side">
+        <span class="tnode-side-type">Education</span>
+        <span class="tnode-side-dates">2015 – 2019</span>
+      </div>
+      <div class="tnode-dot"></div>
+      <div class="tnode-content">
+        <div class="tname">CSVTU, India</div>
+        <div class="tsub">B.E. Electronics &amp; Telecommunication</div>
+        <p class="tprose">My degree was in electronics and telecom, but I had been coding since high school so that part wasn't new. What it gave me was a structured way of approaching problems. That has followed me into every data project since.</p>
+        <div><span class="tgpa">GPA &nbsp; 8.53 / 10.0</span></div>
+        <div class="ttags">
+          <span class="ttag">Signals &amp; Systems</span>
+          <span class="ttag">Control Systems</span>
+          <span class="ttag">Digital Electronics</span>
+          <span class="ttag">Mathematics</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cognizant -->
+    <div class="tnode reveal d1">
+      <div class="tnode-side">
+        <span class="tnode-side-type">Work</span>
+        <span class="tnode-side-dates">Nov 2019 – Jul 2024</span>
+      </div>
+      <div class="tnode-dot"></div>
+      <div class="tnode-content">
+        <div class="tname">Cognizant Technology Solutions</div>
+        <div class="tsub">India</div>
+        <div class="tprog">
+          <span class="tpill">Programmer Analyst Trainee</span>
+          <span class="tarr">›</span>
+          <span class="tpill">Programmer Analyst</span>
+          <span class="tarr">›</span>
+          <span class="tpill">Data Analyst</span>
+        </div>
+        <p class="tprose">Joined as a trainee, didn't really know what to expect. Picked things up fast and moved through the roles over five years. One thing that stood out early was being put in front of clients, presenting migration plans, fallback strategies and findings to product owners and directors. That taught me a lot about how to talk about technical work to people making decisions based on it. On the technical side, built classifiers that cut validation from 1,500 to 4 minutes per 100 test cases, a reconciliation tool that brought an 8 hour process down to 5 minutes, and dashboards clients were checking before every monthly release.</p>
+        <div class="tmets">
+          <div class="tmet"><strong>1,500 › 4 min</strong><span>per 100 test cases</span></div>
+          <div class="tmet"><strong>8 hrs › 5 min</strong><span>reconciliation</span></div>
+          <div class="tmet"><strong>$14K / mo</strong><span>cost savings</span></div>
+          <div class="tmet"><strong>+20%</strong><span>prediction accuracy</span></div>
+        </div>
+        <div class="ttags">
+          <span class="ttag">Python</span><span class="ttag">SQL</span><span class="ttag">Tableau</span>
+          <span class="ttag">Power BI</span><span class="ttag">KNN</span><span class="ttag">Decision Trees</span><span class="ttag">Excel</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- UMD -->
+    <div class="tnode reveal d2">
+      <div class="tnode-side">
+        <span class="tnode-side-type">Education</span>
+        <span class="tnode-side-dates">Aug 2024 – May 2026</span>
+      </div>
+      <div class="tnode-dot"></div>
+      <div class="tnode-content">
+        <div class="tname">University of Maryland</div>
+        <div class="tsub">M.S. in Data Science</div>
+        <p class="tprose">After five years of working I wanted to understand things more formally. I had always planned on doing a masters at some point and this felt like the right time.</p>
+        <div><span class="tgpa">GPA &nbsp; 3.84 / 4.0</span></div>
+        <div class="ttags">
+          <span class="ttag">Machine Learning</span><span class="ttag">Deep Learning</span>
+          <span class="ttag">NLP</span><span class="ttag">Big Data Systems</span>
+          <span class="ttag">Cloud Computing</span>
+        </div>
+        <div class="ta-block">
+          <div class="ta-lbl">Teaching Assistant</div>
+          <div class="ta-row">Break Through Tech AI, Cornell Tech <em>· Summer 2025</em></div>
+          <div class="ta-row">CMSC320, DATA602 <em>· Fall 2025</em></div>
+          <div class="ta-row">CMSC320, DATA200 <em>· Spring 2026</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Canaria -->
+    <div class="tnode reveal d3">
+      <div class="tnode-side">
+        <span class="tnode-side-type">Work · MS</span>
+        <span class="tnode-side-dates">Jun – Aug 2025</span>
+      </div>
+      <div class="tnode-dot"></div>
+      <div class="tnode-content">
+        <div class="tname">Canaria Inc</div>
+        <div class="tsub">Data Science Intern &nbsp;·&nbsp; Remote, US</div>
+        <p class="tprose">Got to work on a genuinely hard problem over the summer. 20M+ records from 15+ sources, no clean path, and had to build the salary intelligence pipeline and anomaly detection framework more or less from scratch. Worked closely with the engineering team on the ETL side too.</p>
+        <div class="tmets">
+          <div class="tmet"><strong>70%</strong><span>faster processing</span></div>
+          <div class="tmet"><strong>60%</strong><span>less manual review</span></div>
+          <div class="tmet"><strong>20M+</strong><span>records processed</span></div>
+        </div>
+        <div class="ttags">
+          <span class="ttag">Python</span><span class="ttag">SQL</span><span class="ttag">Apache Spark</span>
+          <span class="ttag">ClickHouse</span><span class="ttag">Anomaly Detection</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <hr class="sep"/>
 
+<!-- SKILLS -->
 <div class="section" id="skills">
   <h2 class="sec-title reveal">Skills</h2>
-  <div class="skills-section">
+  <div class="skill-rows">
 
-    <div class="skill-group reveal">
-      <div class="skill-group-title" style="color:var(--lilac)">Languages</div>
+    <div class="skill-row reveal">
+      <div class="sr-label sr-lang">
+        <i class="fa-solid fa-code"></i>
+        <span>Languages</span>
+      </div>
       <div class="skill-pills">
         <span class="pill pill-lilac">Python</span>
         <span class="pill pill-lilac">SQL</span>
@@ -374,8 +552,11 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       </div>
     </div>
 
-    <div class="skill-group reveal d1">
-      <div class="skill-group-title" style="color:var(--rust)">ML &amp; Deep Learning</div>
+    <div class="skill-row reveal d1">
+      <div class="sr-label sr-ml">
+        <i class="fa-solid fa-brain"></i>
+        <span>ML &amp; Deep Learning</span>
+      </div>
       <div class="skill-pills">
         <span class="pill pill-rust">PyTorch</span>
         <span class="pill pill-rust">scikit-learn</span>
@@ -387,8 +568,11 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       </div>
     </div>
 
-    <div class="skill-group reveal d2">
-      <div class="skill-group-title" style="color:var(--amber)">Analytics</div>
+    <div class="skill-row reveal d2">
+      <div class="sr-label sr-ana">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Analytics</span>
+      </div>
       <div class="skill-pills">
         <span class="pill pill-amber">Pandas</span>
         <span class="pill pill-amber">NumPy</span>
@@ -400,8 +584,11 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       </div>
     </div>
 
-    <div class="skill-group reveal d3">
-      <div class="skill-group-title" style="color:var(--pine)">Visualization</div>
+    <div class="skill-row reveal d3">
+      <div class="sr-label sr-viz">
+        <i class="fa-solid fa-chart-bar"></i>
+        <span>Visualization</span>
+      </div>
       <div class="skill-pills">
         <span class="pill pill-pine">Tableau</span>
         <span class="pill pill-pine">Power BI</span>
@@ -411,8 +598,11 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       </div>
     </div>
 
-    <div class="skill-group reveal d4">
-      <div class="skill-group-title" style="color:var(--teal)">Data Engineering</div>
+    <div class="skill-row reveal d4">
+      <div class="sr-label sr-eng">
+        <i class="fa-solid fa-gears"></i>
+        <span>Data Engineering</span>
+      </div>
       <div class="skill-pills">
         <span class="pill pill-teal">Apache Spark</span>
         <span class="pill pill-teal">ClickHouse</span>
@@ -422,8 +612,11 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       </div>
     </div>
 
-    <div class="skill-group reveal d5">
-      <div class="skill-group-title" style="color:var(--rose)">Cloud &amp; Infra</div>
+    <div class="skill-row reveal d5">
+      <div class="sr-label sr-cloud">
+        <i class="fa-solid fa-cloud"></i>
+        <span>Cloud &amp; Infra</span>
+      </div>
       <div class="skill-pills">
         <span class="pill pill-rose">AWS EC2</span>
         <span class="pill pill-rose">S3</span>
@@ -440,37 +633,39 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
 
 <hr class="sep"/>
 
-<div class="section" id="education">
-  <h2 class="sec-title reveal">Education</h2>
-  <div class="edu-grid">
-
-    <div class="edu-card reveal d1">
-      <div class="edu-band bl"></div>
-      <div class="edu-body">
-        <div class="edu-degree">Master of Science in Data Science</div>
-        <div class="edu-school">University of Maryland, College Park</div>
-        <div class="edu-meta">August 2024 &ndash; May 2026</div>
-        <div class="edu-gpa">GPA &nbsp;3.84 / 4.0</div>
-        <div class="edu-label">Coursework</div>
-        <div class="edu-courses">Machine Learning &middot; Algorithms for Data Science &middot; Big Data Systems &middot; Natural Language Processing &middot; Deep Learning &middot; Cloud Computing</div>
-      </div>
+<!-- OUTSIDE OF WORK -->
+<div class="section" id="outside">
+  <h2 class="sec-title reveal">Outside of work</h2>
+  <div class="hobby-grid">
+    <div class="hobby-card reveal d1">
+      <div class="hobby-icon" style="color:var(--rust)"><i class="fa-solid fa-utensils"></i></div>
+      <div class="hobby-title">Cooking</div>
+      <div class="hobby-desc">Always experimenting, usually inspired by something I just watched</div>
     </div>
-
-    <div class="edu-card reveal d2">
-      <div class="edu-band br"></div>
-      <div class="edu-body">
-        <div class="edu-degree">Bachelor of Engineering in Electronics &amp; Telecommunication</div>
-        <div class="edu-school">CSVTU, India</div>
-        <div class="edu-meta">July 2015 &ndash; May 2019</div>
-        <div class="edu-gpa">GPA &nbsp;8.53 / 10.0</div>
-        <div class="edu-label">Coursework</div>
-        <div class="edu-courses">Signals &amp; Systems &middot; Digital Electronics &middot; Communications Engineering &middot; Control Systems &middot; Microprocessors &middot; Electromagnetic Theory</div>
-      </div>
+    <div class="hobby-card reveal d2">
+      <div class="hobby-icon" style="color:var(--lilac)"><i class="fa-solid fa-palette"></i></div>
+      <div class="hobby-title">Painting</div>
+      <div class="hobby-desc">The one thing that gets me off a screen</div>
     </div>
-
+    <div class="hobby-card reveal d3">
+      <div class="hobby-icon" style="color:var(--amber)"><i class="fa-solid fa-film"></i></div>
+      <div class="hobby-title">Thriller movies</div>
+      <div class="hobby-desc">The kind where you're still thinking about it the next day</div>
+    </div>
+    <div class="hobby-card reveal d4">
+      <div class="hobby-icon" style="color:var(--teal)"><i class="fa-solid fa-keyboard"></i></div>
+      <div class="hobby-title">Wordle</div>
+      <div class="hobby-desc">Every morning, non-negotiable</div>
+    </div>
+    <div class="hobby-card reveal d5">
+      <div class="hobby-icon" style="color:var(--pine)"><i class="fa-solid fa-gamepad"></i></div>
+      <div class="hobby-title">Uno</div>
+      <div class="hobby-desc">Competitive. Will not apologize for Draw Four</div>
+    </div>
   </div>
 </div>
 
+<!-- CONTACT -->
 <div class="contact-wrap" id="contact">
   <div class="contact-inner">
     <div class="contact-left reveal">
@@ -478,9 +673,9 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       <p>Open to data science, analytics, and ML roles anywhere in the US, starting summer 2026. Also happy to talk about anything you are building.</p>
     </div>
     <div class="contact-links reveal d2">
-      <a href="mailto:simish98@umd.edu" class="contact-link">
+      <a href="/cdn-cgi/l/email-protection#4c3f2521253f2475740c39212862292839" class="contact-link">
         <span class="cl-label">Email</span>
-        <span class="cl-val">simish98@umd.edu</span>
+        <span class="cl-val"><span class="__cf_email__" data-cfemail="d1a2b8bcb8a2b9e8e991a4bcb5ffb4b5a4">[email&#160;protected]</span></span>
         <span class="cl-arrow">&#8599;</span>
       </a>
       <a href="https://github.com/Simi-Shrivastava11" class="contact-link" target="_blank">
@@ -509,7 +704,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   var SUN='<path d="M12 4.5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 12 4.5zM12 17.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 .75-.75zM19.5 12a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 .75.75zM6.75 12a.75.75 0 0 1-.75.75H4.5a.75.75 0 0 1 0-1.5H6a.75.75 0 0 1 .75.75zM17.03 7.03a.75.75 0 0 1 0 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0zM8.03 15.97a.75.75 0 0 1 0 1.06l-1.06 1.06a.75.75 0 0 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0zM17.03 16.97a.75.75 0 0 1-1.06 0l-1.06-1.06a.75.75 0 1 1 1.06-1.06l1.06 1.06a.75.75 0 0 1 0 1.06zM8.03 8.03a.75.75 0 0 1-1.06 0L5.91 6.97a.75.75 0 0 1 1.06-1.06l1.06 1.06a.75.75 0 0 1 0 1.06zM12 8.25a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5z"/>';
   var MOON='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
