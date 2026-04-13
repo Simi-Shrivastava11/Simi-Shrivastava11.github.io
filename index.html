@@ -143,13 +143,13 @@ nav{
   width:260px;height:260px;
   border-radius:50%;
   object-fit:cover;
-  object-position:center top;
+  object-position:center 75%;
   border:3px solid var(--purple-border);
 }
 body.light .hero-photo img{border-color:var(--border-card)}
 .hero-greeting{
   font-family:var(--caveat);
-  font-size:clamp(3.2rem,8vw,6.5rem);
+  font-size:clamp(2.6rem,5.5vw,4.8rem);
   font-weight:700;
   line-height:1;
   margin-bottom:1.1rem;
@@ -1082,7 +1082,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
     <div class="contact-heading reveal d1">Say <em>hello.</em></div>
     <p class="contact-sub reveal d2">Open to data science, analytics, and ML roles anywhere in the US, starting Summer 2026. Happy to talk about anything you are building.</p>
     <div class="contact-pills reveal d3">
-      <a href="mailto:simish98@umd.edu" class="contact-pill primary">✉️ &nbsp;Email me</a>
+      <a href="/cdn-cgi/l/email-protection#691a0004001a015051291c040d470c0d1c" class="contact-pill primary">✉️ &nbsp;Email me</a>
       <a href="https://github.com/Simi-Shrivastava11" class="contact-pill ghost" target="_blank">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/simi-shrivastava" class="contact-pill ghost" target="_blank">LinkedIn ↗</a>
       <a href="SimiShrivastava_Resume.pdf" class="contact-pill ghost" target="_blank">Resume ↗</a>
@@ -1103,7 +1103,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
 <!-- ============================================================
      SCRIPTS
      ============================================================ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
 
   /* ---- THEME TOGGLE ---- */
@@ -1228,13 +1228,4 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       btn.onclick=function(){
         document.querySelectorAll('.mob-cat').forEach(function(b){b.classList.remove('active');});
         btn.classList.add('active');
-        mobSkills.innerHTML=cat.skills.map(function(s){return '<span class="mob-skill">'+s+'</span>';}).join('');
-      };
-      mobCats.appendChild(btn);
-    });
-  }
-
-}());
-</script>
-</body>
-</html>
+        mobSkills.innerHTML=cat.skills.map(function(s
