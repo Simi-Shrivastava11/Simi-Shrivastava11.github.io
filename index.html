@@ -1007,13 +1007,13 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
 <section id="skills">
   <div class="section">
     <h2 class="sec-title reveal">Skills</h2>
-    <p class="sec-hint reveal d1">Click a category to explore its skills</p>
+    <p class="sec-hint reveal d1">Hover over a category to explore its skills</p>
 
     <!-- Wheel (desktop) -->
     <div class="wheel-wrap" id="wheel">
       <div class="wheel-center">
         <div class="center-icon" id="center-icon"><i class="fa-solid fa-circle-nodes"></i></div>
-        <div class="center-label" id="center-label">Click a category</div>
+        <div class="center-label" id="center-label">Hover a category</div>
       </div>
       <div class="cat-node" id="cat-0" onclick="selectCat(0)"><i class="fa-brands fa-python node-icon"></i><div class="node-label">Languages</div></div>
       <div class="cat-node" id="cat-1" onclick="selectCat(1)"><i class="fa-solid fa-microchip node-icon"></i><div class="node-label">ML / DL</div></div>
@@ -1080,7 +1080,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
     <div class="contact-heading reveal d1">Say <em>hello.</em></div>
     <p class="contact-sub reveal d2">Open to data science, analytics, and ML roles anywhere in the US, starting Summer 2026. Happy to talk about anything you are building.</p>
     <div class="contact-pills reveal d3">
-      <a href="/cdn-cgi/l/email-protection#691a0004001a015051291c040d470c0d1c" class="contact-pill primary">✉️ &nbsp;Email me</a>
+      <a href="javascript:void(0)" onclick="window.location.href='mai'+'lto:'+'simish98'+'@'+'umd.edu';" class="contact-pill primary">✉️ &nbsp;Email me</a>
       <a href="https://github.com/Simi-Shrivastava11" class="contact-pill ghost" target="_blank">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/simi-shrivastava" class="contact-pill ghost" target="_blank">LinkedIn ↗</a>
       <a href="SimiShrivastava_Resume.pdf" class="contact-pill ghost" target="_blank">Resume ↗</a>
@@ -1160,7 +1160,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
         clearSkills();
         activeCat=-1;
         document.getElementById('center-icon').innerHTML='<i class="fa-solid fa-circle-nodes"></i>';
-        document.getElementById('center-label').textContent='Click a category';
+        document.getElementById('center-label').textContent='Hover a category';
       });
     });
 
@@ -1211,7 +1211,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       if(activeCat===idx){
         activeCat=-1;
         document.getElementById('center-icon').innerHTML='<i class="fa-solid fa-circle-nodes"></i>';
-        document.getElementById('center-label').textContent='Click a category';
+        document.getElementById('center-label').textContent='Hover a category';
         return;
       }
       activeCat=idx;
