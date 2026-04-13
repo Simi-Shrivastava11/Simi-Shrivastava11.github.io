@@ -603,7 +603,7 @@ body.dark .mob-cat{border:1px solid var(--border);color:#666}
 body.dark .mob-cat.active{border-color:var(--purple);color:var(--purple);background:var(--purple-bg)}
 body.light .mob-cat{border:1px solid var(--border);color:#aaa}
 body.light .mob-cat.active{border-color:var(--purple);color:var(--purple);background:var(--purple-bg)}
-.mob-skills{display:flex;flex-wrap:wrap;gap:.4rem;min-height:60px}
+.mob-skills{display:flex;flex-wrap:wrap;gap:.4rem;align-items:flex-start;align-content:flex-start}
 .mob-skill{
   font-family:var(--mono);font-size:.6rem;letter-spacing:.04em;
   padding:.2rem .6rem;border-radius:20px;
@@ -900,26 +900,54 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
     <h2 class="sec-title reveal">The story so far</h2>
     <div class="timeline">
 
-      <!-- CSVTU -->
+      <!-- Canaria -->
       <div class="tl-entry reveal">
         <div class="tl-year-col">
-          <div class="tl-year">2015</div>
-          <div class="tl-range">2015 — 2019</div>
+          <div class="tl-year">2025</div>
+          <div class="tl-range">Jun — Aug 2025</div>
+          <div class="tl-type work">Work · MS</div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-org">Canaria Inc</div>
+          <div class="tl-meta">Data Science Intern<span class="tl-meta-sep">·</span>Remote, US</div>
+          <p class="tl-prose">20M+ records from 15+ sources. Built the salary intelligence pipeline and anomaly detection framework more or less from scratch. Worked closely with the engineering team on the ETL side too.</p>
+          <div class="tl-metrics">
+            <div class="tl-met"><strong>70%</strong><span>faster processing</span></div>
+            <div class="tl-met"><strong>60%</strong><span>less manual review</span></div>
+            <div class="tl-met"><strong>20M+</strong><span>records processed</span></div>
+          </div>
+          <div class="tl-tags">
+            <span class="tl-tag">Python</span><span class="tl-tag">SQL</span><span class="tl-tag">Apache Spark</span><span class="tl-tag">ClickHouse</span><span class="tl-tag">Anomaly Detection</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- UMD -->
+      <div class="tl-entry reveal d1">
+        <div class="tl-year-col">
+          <div class="tl-year">2024</div>
+          <div class="tl-range">Aug 2024 — May 2026</div>
           <div class="tl-type edu">Education</div>
         </div>
         <div class="tl-card">
-          <div class="tl-org">CSVTU</div>
-          <div class="tl-meta">B.E. Electronics and Telecommunication<span class="tl-meta-sep">·</span>India</div>
-          <p class="tl-prose">My degree was in electronics and telecom, but I had been coding since high school so that part was not new. What it gave me was a structured way of approaching problems. That has followed me into every data project since.</p>
-          <div class="tl-gpa">GPA 8.53 / 10.0</div>
+          <div class="tl-org">University of Maryland</div>
+          <div class="tl-meta">M.S. in Data Science<span class="tl-meta-sep">·</span>College Park, MD</div>
+          <p class="tl-prose">After five years of working I wanted to understand things more formally. I had always planned on doing a masters at some point and this felt like the right time.</p>
+          <div class="tl-gpa">GPA 3.84 / 4.0</div>
           <div class="tl-tags">
-            <span class="tl-tag">Signals and Systems</span><span class="tl-tag">Control Systems</span><span class="tl-tag">Digital Electronics</span><span class="tl-tag">Mathematics</span>
+            <span class="tl-tag">Machine Learning</span><span class="tl-tag">Deep Learning</span><span class="tl-tag">NLP</span><span class="tl-tag">Big Data Systems</span><span class="tl-tag">Cloud Computing</span>
+          </div>
+          <div class="ta-block">
+            <div class="ta-label">Teaching Assistant</div>
+            <div class="ta-row">Break Through Tech AI, Cornell Tech <span class="ta-em">· Summer 2025</span></div>
+            <div class="ta-row">CMSC320, DATA602 <span class="ta-em">· Fall 2025</span></div>
+            <div class="ta-row">CMSC320, DATA200 <span class="ta-em">· Spring 2026</span></div>
           </div>
         </div>
       </div>
 
       <!-- Cognizant -->
-      <div class="tl-entry reveal d1">
+      <div class="tl-entry reveal d2">
         <div class="tl-year-col">
           <div class="tl-year">2019</div>
           <div class="tl-range">Nov 2019 — Jul 2024</div>
@@ -949,48 +977,19 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
         </div>
       </div>
 
-      <!-- UMD -->
-      <div class="tl-entry reveal d2">
+      <!-- CSVTU — trimmed -->
+      <div class="tl-entry reveal d3">
         <div class="tl-year-col">
-          <div class="tl-year">2024</div>
-          <div class="tl-range">Aug 2024 — May 2026</div>
+          <div class="tl-year">2015</div>
+          <div class="tl-range">2015 — 2019</div>
           <div class="tl-type edu">Education</div>
         </div>
         <div class="tl-card">
-          <div class="tl-org">University of Maryland</div>
-          <div class="tl-meta">M.S. in Data Science<span class="tl-meta-sep">·</span>College Park, MD</div>
-          <p class="tl-prose">After five years of working I wanted to understand things more formally. I had always planned on doing a masters at some point and this felt like the right time.</p>
-          <div class="tl-gpa">GPA 3.84 / 4.0</div>
+          <div class="tl-org">CSVTU</div>
+          <div class="tl-meta">B.E. Electronics and Telecommunication<span class="tl-meta-sep">·</span>India</div>
+          <div class="tl-gpa">GPA 8.53 / 10.0</div>
           <div class="tl-tags">
-            <span class="tl-tag">Machine Learning</span><span class="tl-tag">Deep Learning</span><span class="tl-tag">NLP</span><span class="tl-tag">Big Data Systems</span><span class="tl-tag">Cloud Computing</span>
-          </div>
-          <div class="ta-block">
-            <div class="ta-label">Teaching Assistant</div>
-            <div class="ta-row">Break Through Tech AI, Cornell Tech <span class="ta-em">· Summer 2025</span></div>
-            <div class="ta-row">CMSC320, DATA602 <span class="ta-em">· Fall 2025</span></div>
-            <div class="ta-row">CMSC320, DATA200 <span class="ta-em">· Spring 2026</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Canaria -->
-      <div class="tl-entry reveal d3">
-        <div class="tl-year-col">
-          <div class="tl-year">2025</div>
-          <div class="tl-range">Jun — Aug 2025</div>
-          <div class="tl-type work">Work · MS</div>
-        </div>
-        <div class="tl-card">
-          <div class="tl-org">Canaria Inc</div>
-          <div class="tl-meta">Data Science Intern<span class="tl-meta-sep">·</span>Remote, US</div>
-          <p class="tl-prose">20M+ records from 15+ sources. Built the salary intelligence pipeline and anomaly detection framework more or less from scratch. Worked closely with the engineering team on the ETL side too.</p>
-          <div class="tl-metrics">
-            <div class="tl-met"><strong>70%</strong><span>faster processing</span></div>
-            <div class="tl-met"><strong>60%</strong><span>less manual review</span></div>
-            <div class="tl-met"><strong>20M+</strong><span>records processed</span></div>
-          </div>
-          <div class="tl-tags">
-            <span class="tl-tag">Python</span><span class="tl-tag">SQL</span><span class="tl-tag">Apache Spark</span><span class="tl-tag">ClickHouse</span><span class="tl-tag">Anomaly Detection</span>
+            <span class="tl-tag">Signals and Systems</span><span class="tl-tag">Control Systems</span><span class="tl-tag">Digital Electronics</span><span class="tl-tag">Probability and Statistics</span>
           </div>
         </div>
       </div>
