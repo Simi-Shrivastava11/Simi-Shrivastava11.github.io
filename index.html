@@ -128,9 +128,25 @@ nav{
   display:flex;flex-direction:column;justify-content:center;
 }
 .hero-inner{
-  max-width:1000px;margin:0 auto;
+  max-width:1100px;margin:0 auto;
   padding:3.5rem 2rem 2rem;width:100%;
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:3rem;
+  align-items:center;
 }
+.hero-text{display:flex;flex-direction:column}
+.hero-photo{
+  display:flex;align-items:center;justify-content:flex-end;
+}
+.hero-photo img{
+  width:260px;height:260px;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:center top;
+  border:3px solid var(--purple-border);
+}
+body.light .hero-photo img{border-color:var(--border-card)}
 .hero-greeting{
   font-family:var(--caveat);
   font-size:clamp(3.2rem,8vw,6.5rem);
@@ -402,8 +418,8 @@ body.dark .tl-type.edu{color:#888;background:#1c1928;border:1px solid var(--bord
 body.light .tl-type.edu{color:#a098c8;background:rgba(196,181,244,.08);border:1px solid #d8d0f0}
 
 .tl-card{border-radius:8px;padding:1.6rem 1.75rem}
-body.dark .tl-card{background:#1c1928;border:1px solid #242036}
-body.light .tl-card{background:rgba(255,255,255,.75);border:1px solid #ddd8f5}
+body.dark .tl-card{background:var(--secondary-card);border:1px solid var(--secondary-border)}
+body.light .tl-card{background:var(--secondary-card);border:1px solid var(--secondary-border)}
 
 .tl-org{
   font-family:var(--head);font-size:1.05rem;font-weight:700;
@@ -607,8 +623,8 @@ body.light .outside-tagline{color:#111}
 
 .hobby-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.85rem}
 .hobby-card{border-radius:10px;padding:1.25rem 1.1rem}
-body.dark .hobby-card{background:var(--card);border:1px solid var(--border-card)}
-body.light .hobby-card{background:rgba(255,255,255,.85);border:1px solid var(--border-card)}
+body.dark .hobby-card{background:var(--secondary-card);border:1px solid var(--secondary-border)}
+body.light .hobby-card{background:var(--secondary-card);border:1px solid var(--secondary-border)}
 .hobby-icon{font-size:1.5rem;margin-bottom:.65rem}
 .hobby-title{font-family:var(--head);font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem}
 body.dark .hobby-title{color:#fff}
@@ -621,35 +637,50 @@ body.light .hobby-desc{color:#333}
    CONTACT
    ============================================================ */
 .contact-wrap{
-  background:var(--bg);padding:3.5rem 2rem;
-  border-top:1px solid var(--border);
+  background:var(--purple-feat);
+  padding:4rem 2rem;
+  position:relative;
+  overflow:hidden;
 }
 .contact-inner{
   max-width:1140px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+  display:flex;flex-direction:column;
+  gap:1.5rem;
 }
-.contact-left h2{
-  font-family:var(--head);font-size:2.4rem;font-weight:700;
-  letter-spacing:.04em;text-transform:uppercase;
-  color:var(--ink);line-height:1.25;margin-bottom:.85rem;
+.contact-avail{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+  color:#86efac;background:rgba(134,239,172,.1);
+  border:1px solid rgba(134,239,172,.25);
+  padding:.3rem .8rem;border-radius:20px;width:fit-content;
 }
-.contact-left h2 em{font-style:italic;color:var(--purple)}
-.contact-left p{font-size:.9rem;color:var(--muted);line-height:1.85;max-width:360px}
-
-.contact-links{display:flex;flex-direction:column;gap:.65rem}
-.contact-link{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:.9rem 1.2rem;border-radius:6px;
-  color:var(--ink);font-size:.85rem;
-  transition:background .2s,border-color .2s;
+.contact-avail-dot{width:6px;height:6px;border-radius:50%;background:#22c55e}
+.contact-heading{
+  font-family:var(--caveat);
+  font-size:clamp(3rem,7vw,5.5rem);
+  font-weight:700;line-height:1;color:#fff;
 }
-body.dark .contact-link{border:1px solid var(--border-card)}
-body.dark .contact-link:hover{background:var(--purple-bg);border-color:var(--purple-border)}
-body.light .contact-link{border:1px solid var(--border-card)}
-body.light .contact-link:hover{background:var(--purple-bg);border-color:var(--purple-border)}
-.cl-label{font-family:var(--head);font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.cl-val{font-family:var(--mono);font-size:.7rem;color:var(--muted)}
-.cl-arrow{color:var(--purple)}
+.contact-heading em{font-style:italic;color:#c4b5f4}
+.contact-sub{
+  font-family:var(--sans);font-size:.95rem;
+  color:rgba(255,255,255,.72);line-height:1.8;max-width:480px;
+}
+.contact-pills{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:.5rem}
+.contact-pill{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--head);font-size:.7rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:.65rem 1.35rem;border-radius:4px;
+  transition:all .2s;text-decoration:none;
+}
+.contact-pill.primary{
+  background:#fff;color:var(--purple-feat);
+}
+.contact-pill.primary:hover{background:#e8e0ff}
+.contact-pill.ghost{
+  border:1.5px solid rgba(255,255,255,.25);color:#fff;
+}
+.contact-pill.ghost:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5)}
 
 /* ============================================================
    FOOTER
@@ -691,14 +722,15 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
   .tl-entry{grid-template-columns:1fr;gap:.75rem}
   .tl-year{font-size:2.5rem}
   .tl-year-col{flex-direction:row;align-items:center;flex-wrap:wrap;gap:.5rem;padding-top:0}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-photo{display:none}
 }
 @media(max-width:580px){
   .proj-featured{grid-template-columns:1fr}
   .proj-rest{grid-template-columns:1fr 1fr}
   .section{padding:2.75rem 1.25rem}
   .hero-inner{padding:3rem 1.25rem 2rem}
-  .contact-wrap{padding:3rem 1.25rem}
-  .nav-links{display:none}
+  .contact-wrap{padding:3rem 1.25rem}  .nav-links{display:none}
   .nav-inner{padding:.9rem 1.25rem}
   .sec-title{font-size:1.5rem}
   .contact-left h2{font-size:1.8rem}
@@ -737,14 +769,19 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
      ============================================================ -->
 <div class="hero-wrap">
   <div class="hero-inner">
-    <span class="hero-greeting">Hi, I'm Simi!</span>
-    <div class="hero-tagline">From exploratory analysis and dashboards to ML models and production pipelines.</div>
-    <div class="hero-bio">Finishing my MS in Data Science at the University of Maryland, with five years of data and analytics experience in financial services. Open to roles anywhere in the US starting Summer 2026.</div>
-    <div class="cta-row">
-      <a href="#projects" class="cta-p">See my work ↓</a>
-      <a href="https://github.com/Simi-Shrivastava11" class="cta-g" target="_blank">GitHub ↗</a>
-      <a href="https://www.linkedin.com/in/simi-shrivastava" class="cta-g" target="_blank">LinkedIn ↗</a>
-      <a href="SimiShrivastava_Resume.pdf" class="cta-g" target="_blank">Resume ↗</a>
+    <div class="hero-text">
+      <span class="hero-greeting">Hi, I'm Simi!</span>
+      <div class="hero-tagline">From exploratory analysis and dashboards to ML models and production pipelines.</div>
+      <div class="hero-bio">Finishing my MS in Data Science at the University of Maryland, with five years of data and analytics experience in financial services. Open to roles anywhere in the US starting Summer 2026.</div>
+      <div class="cta-row">
+        <a href="#projects" class="cta-p">See my work ↓</a>
+        <a href="https://github.com/Simi-Shrivastava11" class="cta-g" target="_blank">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/simi-shrivastava" class="cta-g" target="_blank">LinkedIn ↗</a>
+        <a href="SimiShrivastava_Resume.pdf" class="cta-g" target="_blank">Resume ↗</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="profile1.jpeg" alt="Simi Shrivastava"/>
     </div>
   </div>
 
@@ -1041,31 +1078,14 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
      ============================================================ -->
 <div class="contact-wrap" id="contact">
   <div class="contact-inner">
-    <div class="contact-left reveal">
-      <h2>Let's work<br/><em>together.</em></h2>
-      <p>Open to data science, analytics, and ML roles anywhere in the US, starting Summer 2026. Happy to talk about anything you are building.</p>
-    </div>
-    <div class="contact-links reveal d2">
-      <a href="/cdn-cgi/l/email-protection#56253f3b3f253e6f6e16233b3278333223" class="contact-link">
-        <span class="cl-label">Email</span>
-        <span class="cl-val"><span class="__cf_email__" data-cfemail="fc8f9591958f94c5c4bc899198d2999889">[email&#160;protected]</span></span>
-        <span class="cl-arrow">↗</span>
-      </a>
-      <a href="https://github.com/Simi-Shrivastava11" class="contact-link" target="_blank">
-        <span class="cl-label">GitHub</span>
-        <span class="cl-val">Simi-Shrivastava11</span>
-        <span class="cl-arrow">↗</span>
-      </a>
-      <a href="https://www.linkedin.com/in/simi-shrivastava" class="contact-link" target="_blank">
-        <span class="cl-label">LinkedIn</span>
-        <span class="cl-val">simi-shrivastava</span>
-        <span class="cl-arrow">↗</span>
-      </a>
-      <a href="SimiShrivastava_Resume.pdf" class="contact-link" target="_blank">
-        <span class="cl-label">Resume</span>
-        <span class="cl-val">PDF download</span>
-        <span class="cl-arrow">↗</span>
-      </a>
+    <div class="contact-avail reveal"><span class="contact-avail-dot"></span>Available Summer 2026 · Open to roles US-wide</div>
+    <div class="contact-heading reveal d1">Say <em>hello.</em></div>
+    <p class="contact-sub reveal d2">Open to data science, analytics, and ML roles anywhere in the US, starting Summer 2026. Happy to talk about anything you are building.</p>
+    <div class="contact-pills reveal d3">
+      <a href="mailto:simish98@umd.edu" class="contact-pill primary">✉️ &nbsp;Email me</a>
+      <a href="https://github.com/Simi-Shrivastava11" class="contact-pill ghost" target="_blank">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/simi-shrivastava" class="contact-pill ghost" target="_blank">LinkedIn ↗</a>
+      <a href="SimiShrivastava_Resume.pdf" class="contact-pill ghost" target="_blank">Resume ↗</a>
     </div>
   </div>
 </div>
