@@ -124,7 +124,7 @@ nav{
    HERO
    ============================================================ */
 .hero-wrap{
-  min-height:calc(100vh - 52px);
+  min-height:calc(80vh - 52px);
   display:flex;flex-direction:column;justify-content:center;
 }
 .hero-inner{
@@ -724,6 +724,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
   .tl-year-col{flex-direction:row;align-items:center;flex-wrap:wrap;gap:.5rem;padding-top:0}
   .hero-inner{grid-template-columns:1fr}
   .hero-photo{display:none}
+  .hero-wrap{min-height:unset;padding:1.5rem 0 0}
 }
 @media(max-width:580px){
   .proj-featured{grid-template-columns:1fr}
@@ -1153,6 +1154,14 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       var node=document.getElementById('cat-'+i);
       node.style.left=(cx-CAT_SIZE/2)+'px';
       node.style.top=(cy-CAT_SIZE/2)+'px';
+      node.addEventListener('mouseenter',function(){selectCat(i);});
+      node.addEventListener('mouseleave',function(){
+        node.classList.remove('active');
+        clearSkills();
+        activeCat=-1;
+        document.getElementById('center-icon').innerHTML='<i class="fa-solid fa-circle-nodes"></i>';
+        document.getElementById('center-label').textContent='Click a category';
+      });
     });
 
     function clearSkills(){
