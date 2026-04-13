@@ -299,7 +299,7 @@ body.light .feat-card:hover{background:var(--purple-feat-hover)}
 }
 .fstat{display:flex;flex-direction:column;gap:.15rem}
 .fstat-val{font-family:var(--mono);font-size:.95rem;color:#fff}
-.fstat-lbl{font-family:var(--sans);font-size:.62rem;color:rgba(255,255,255,.45)}
+.fstat-lbl{font-family:var(--sans);font-size:.68rem;color:rgba(255,255,255,.75)}
 
 .feat-desc{
   font-family:var(--sans);font-size:.86rem;
@@ -357,12 +357,14 @@ body.light .rest-tag{color:#4030a0;background:rgba(255,255,255,.4);border:1px so
 
 .wip-badge{
   display:inline-flex;align-items:center;gap:.3rem;
-  font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;
-  text-transform:uppercase;color:#c49a3a;
-  border:1px solid rgba(196,154,58,.22);
-  padding:.14rem .5rem;border-radius:2px;width:fit-content;
+  font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#d4a017;
+  border:1.5px solid rgba(212,160,23,.45);
+  background:rgba(212,160,23,.1);
+  padding:.18rem .6rem;border-radius:2px;width:fit-content;
+  margin-top:.5rem;
 }
-.wip-dot{width:4px;height:4px;border-radius:50%;background:#c49a3a;animation:blink 1.8s ease-in-out infinite}
+.wip-dot{width:5px;height:5px;border-radius:50%;background:#d4a017;animation:blink 1.8s ease-in-out infinite}
 
 /* ============================================================
    FIX 3 — EXPERIENCE / TIMELINE
@@ -492,12 +494,12 @@ body.dark .sec-hint{color:#ccc}
 body.light .sec-hint{color:#333}
 
 .wheel-wrap{
-  position:relative;width:620px;height:560px;margin:0 auto;
+  position:relative;width:720px;height:620px;margin:0 auto;
 }
 
 /* Center hub */
 .wheel-center{
-  position:absolute;top:280px;left:310px;
+  position:absolute;top:310px;left:360px;
   transform:translate(-50%,-50%);
   width:130px;height:130px;border-radius:50%;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.35rem;
@@ -561,8 +563,8 @@ body.light .orbit-ring{border-color:rgba(69,53,168,.12)}
 
 .skill-tag-node{
   position:absolute;
-  font-family:var(--mono);font-size:.57rem;letter-spacing:.04em;
-  padding:.22rem .65rem;border-radius:20px;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;
+  padding:.28rem .8rem;border-radius:20px;
   white-space:nowrap;z-index:8;pointer-events:none;
   opacity:0;
   transform:translate(-50%,-50%) scale(.5);
@@ -597,23 +599,23 @@ body.light .mob-skill{color:var(--purple);background:#fff;border:1px solid #c8bf
    OUTSIDE OF WORK
    ============================================================ */
 .outside-tagline{
-  font-family:var(--sans);font-size:.95rem;
-  margin-bottom:2.25rem;
+  font-family:var(--sans);font-size:1rem;
+  margin-bottom:2rem;font-weight:400;
 }
-body.dark .outside-tagline{color:var(--muted)}
-body.light .outside-tagline{color:var(--muted)}
+body.dark .outside-tagline{color:#fff}
+body.light .outside-tagline{color:#111}
 
 .hobby-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.85rem}
-.hobby-card{border-radius:10px;padding:1.1rem}
+.hobby-card{border-radius:10px;padding:1.25rem 1.1rem}
 body.dark .hobby-card{background:var(--card);border:1px solid var(--border-card)}
-body.light .hobby-card{background:rgba(255,255,255,.75);border:1px solid var(--border-card)}
-.hobby-icon{font-size:1.1rem;margin-bottom:.5rem}
-.hobby-title{font-family:var(--head);font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.2rem}
+body.light .hobby-card{background:rgba(255,255,255,.85);border:1px solid var(--border-card)}
+.hobby-icon{font-size:1.5rem;margin-bottom:.65rem}
+.hobby-title{font-family:var(--head);font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem}
 body.dark .hobby-title{color:#fff}
 body.light .hobby-title{color:#111}
-.hobby-desc{font-size:.72rem;line-height:1.6}
-body.dark .hobby-desc{color:var(--muted)}
-body.light .hobby-desc{color:var(--muted)}
+.hobby-desc{font-size:.8rem;line-height:1.65}
+body.dark .hobby-desc{color:#ccc}
+body.light .hobby-desc{color:#333}
 
 /* ============================================================
    CONTACT
@@ -815,8 +817,8 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
 
       <a class="rest-card reveal d1" href="https://github.com/Simi-Shrivastava11/tabddpm-hospital-readmission-prediction" target="_blank">
         <div class="rest-top"><span class="rest-arrow">↗</span></div>
-        <div class="wip-badge"><span class="wip-dot"></span>In progress</div>
         <div class="rest-title">TabDDPM: Can Diffusion Models Fix Clinical Class Imbalance?</div>
+        <div class="wip-badge"><span class="wip-dot"></span>In progress</div>
         <p class="rest-desc">Comparing TabDDPM, SMOTE, and CTGAN on a heavily imbalanced hospital readmission dataset.</p>
         <div class="rest-tags"><span class="rest-tag">PyTorch</span><span class="rest-tag">XGBoost</span><span class="rest-tag">CTGAN</span></div>
       </a>
@@ -1006,27 +1008,27 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
     <p class="outside-tagline reveal d1">What I do when I am not staring at a dataset.</p>
     <div class="hobby-grid">
       <div class="hobby-card reveal d1">
-        <div class="hobby-icon" style="color:var(--purple)"><i class="fa-solid fa-utensils"></i></div>
+        <div class="hobby-icon"><i class="fa-solid fa-utensils" style="color:#f97316"></i></div>
         <div class="hobby-title">Cooking</div>
         <div class="hobby-desc">Mostly Instagram recipes I have no business attempting</div>
       </div>
       <div class="hobby-card reveal d2">
-        <div class="hobby-icon" style="color:var(--purple)"><i class="fa-solid fa-palette"></i></div>
+        <div class="hobby-icon"><i class="fa-solid fa-palette" style="color:#a855f7"></i></div>
         <div class="hobby-title">Painting</div>
         <div class="hobby-desc">The one thing that gets me off a screen</div>
       </div>
       <div class="hobby-card reveal d3">
-        <div class="hobby-icon" style="color:var(--purple)"><i class="fa-solid fa-film"></i></div>
+        <div class="hobby-icon"><i class="fa-solid fa-film" style="color:#ef4444"></i></div>
         <div class="hobby-title">Thriller movies</div>
         <div class="hobby-desc">The kind where you are still thinking about it the next day</div>
       </div>
       <div class="hobby-card reveal d4">
-        <div class="hobby-icon" style="color:var(--purple)"><i class="fa-solid fa-keyboard"></i></div>
+        <div class="hobby-icon"><i class="fa-solid fa-keyboard" style="color:#22c55e"></i></div>
         <div class="hobby-title">Wordle</div>
         <div class="hobby-desc">Proud of a 2-attempt win I will not stop talking about</div>
       </div>
       <div class="hobby-card reveal d5">
-        <div class="hobby-icon" style="color:var(--purple)"><i class="fa-solid fa-gamepad"></i></div>
+        <div class="hobby-icon"><i class="fa-solid fa-gamepad" style="color:#3b82f6"></i></div>
         <div class="hobby-title">Uno</div>
         <div class="hobby-desc">Competitive. Will not apologize for Draw Four</div>
       </div>
@@ -1123,7 +1125,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
 
   var WHEEL=document.getElementById('wheel');
   if(WHEEL){
-    var N=CATS.length, WRAP=620, CX=310, CY=280, CAT_R=190, CAT_SIZE=120, SKILL_R=82;
+    var N=CATS.length, WRAP=720, CX=360, CY=310, CAT_R=240, CAT_SIZE=120, SKILL_R=100;
     var activeCat=-1, activeSkillEls=[], activeRing=null;
     var catPositions=[];
 
