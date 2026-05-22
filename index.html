@@ -555,6 +555,7 @@ body.light .cat-node.active{background:#f5f5ff;border:2px solid #aaa;box-shadow:
 #cat-3 .node-icon{color:#ec4899}   /* Viz pink */
 #cat-4 .node-icon{color:#64748b}   /* Data Eng slate */
 #cat-5 .node-icon{color:#2496ED}   /* Docker blue */
+#cat-6 .node-icon{color:#a855f7}   /* GenAI purple */
 
 /* Brighten on hover/active */
 body.dark .cat-node:hover .node-icon,body.dark .cat-node.active .node-icon{filter:brightness(1.25)}
@@ -771,7 +772,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
     <div class="hero-text">
       <span class="hero-greeting">Hi, I'm Simi!</span>
       <div class="hero-tagline">From exploratory analysis and dashboards to ML models and production pipelines.</div>
-      <div class="hero-bio">Finishing my MS in Data Science at the University of Maryland, with five years of data and analytics experience in financial services. Open to roles anywhere in the US starting Summer 2026.</div>
+      <div class="hero-bio">Graduated with my MS in Data Science from the University of Maryland (GPA 3.86), with five years of industry experience in data and analytics. Focused on applied ML, generative AI, and production data systems. Based in Columbus, OH and open to roles anywhere in the US.</div>
       <div class="cta-row">
         <a href="#projects" class="cta-p">See my work ↓</a>
         <a href="https://github.com/Simi-Shrivastava11" class="cta-g" target="_blank">GitHub ↗</a>
@@ -791,18 +792,20 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       <span class="marquee-item">5 years industry experience <span class="marquee-sep"></span></span>
       <span class="marquee-item">8 hrs → 5 min — reconciliation time <span class="marquee-sep"></span></span>
       <span class="marquee-item">$14K / mo cost savings <span class="marquee-sep"></span></span>
-      <span class="marquee-item">GPA 3.84 / 4.0 <span class="marquee-sep"></span></span>
+      <span class="marquee-item">GPA 3.86 / 4.0 <span class="marquee-sep"></span></span>
       <span class="marquee-item">Python · PySpark · PyTorch <span class="marquee-sep"></span></span>
+      <span class="marquee-item">Diffusion Models · Generative AI · Synthetic Data <span class="marquee-sep"></span></span>
       <span class="marquee-item">AWS · Docker · ClickHouse <span class="marquee-sep"></span></span>
-      <span class="marquee-item">Open to roles US-wide · Summer 2026 <span class="marquee-sep"></span></span>
+      <span class="marquee-item">Columbus, OH · Open to roles US-wide <span class="marquee-sep"></span></span>
       <!-- Copy 2 for seamless loop -->
       <span class="marquee-item">5 years industry experience <span class="marquee-sep"></span></span>
       <span class="marquee-item">8 hrs → 5 min — reconciliation time <span class="marquee-sep"></span></span>
       <span class="marquee-item">$14K / mo cost savings <span class="marquee-sep"></span></span>
-      <span class="marquee-item">GPA 3.84 / 4.0 <span class="marquee-sep"></span></span>
+      <span class="marquee-item">GPA 3.86 / 4.0 <span class="marquee-sep"></span></span>
       <span class="marquee-item">Python · PySpark · PyTorch <span class="marquee-sep"></span></span>
+      <span class="marquee-item">Diffusion Models · Generative AI · Synthetic Data <span class="marquee-sep"></span></span>
       <span class="marquee-item">AWS · Docker · ClickHouse <span class="marquee-sep"></span></span>
-      <span class="marquee-item">Open to roles US-wide · Summer 2026 <span class="marquee-sep"></span></span>
+      <span class="marquee-item">Columbus, OH · Open to roles US-wide <span class="marquee-sep"></span></span>
     </div>
   </div>
 
@@ -853,10 +856,9 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
 
       <a class="rest-card reveal d1" href="https://github.com/Simi-Shrivastava11/tabddpm-hospital-readmission-prediction" target="_blank">
         <div class="rest-top"><span class="rest-arrow">↗</span></div>
-        <div class="rest-title">TabDDPM: Can Diffusion Models Fix Clinical Class Imbalance?</div>
-        <div class="wip-badge"><span class="wip-dot"></span>In progress</div>
-        <p class="rest-desc">Comparing TabDDPM, SMOTE, and CTGAN on a heavily imbalanced hospital readmission dataset.</p>
-        <div class="rest-tags"><span class="rest-tag">PyTorch</span><span class="rest-tag">XGBoost</span><span class="rest-tag">CTGAN</span></div>
+        <div class="rest-title">TabDDPM: Diffusion Models for Clinical Class Imbalance</div>
+        <p class="rest-desc">Built TabDDPM from scratch in PyTorch — Gaussian + multinomial diffusion with class conditioning — on 101,766 patient records. Achieved the best ROC-AUC of 0.6616 at 100% augmentation, outranking SMOTE and CTGAN.</p>
+        <div class="rest-tags"><span class="rest-tag">Diffusion Models</span><span class="rest-tag">PyTorch</span><span class="rest-tag">Generative AI</span><span class="rest-tag">XGBoost</span><span class="rest-tag">CTGAN</span><span class="rest-tag">Synthetic Data</span></div>
       </a>
 
       <a class="rest-card reveal d2" href="https://github.com/Simi-Shrivastava11/Sentiment-Classification-RNN" target="_blank">
@@ -934,9 +936,9 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
           <div class="tl-org">University of Maryland</div>
           <div class="tl-meta">M.S. in Data Science<span class="tl-meta-sep">·</span>College Park, MD</div>
           <p class="tl-prose">After five years of working I wanted to understand things more formally. I had always planned on doing a masters at some point and this felt like the right time.</p>
-          <div class="tl-gpa">GPA 3.84 / 4.0</div>
+          <div class="tl-gpa">GPA 3.86 / 4.0</div>
           <div class="tl-tags">
-            <span class="tl-tag">Machine Learning</span><span class="tl-tag">Deep Learning</span><span class="tl-tag">NLP</span><span class="tl-tag">Big Data Systems</span><span class="tl-tag">Cloud Computing</span>
+            <span class="tl-tag">Machine Learning</span><span class="tl-tag">Deep Learning</span><span class="tl-tag">NLP</span><span class="tl-tag">Generative AI</span><span class="tl-tag">Big Data Systems</span><span class="tl-tag">Cloud Computing</span>
           </div>
           <div class="ta-block">
             <div class="ta-label">Teaching Assistant</div>
@@ -1021,6 +1023,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       <div class="cat-node" id="cat-3" onclick="selectCat(3)"><i class="fa-solid fa-chart-pie node-icon"></i><div class="node-label">Viz</div></div>
       <div class="cat-node" id="cat-4" onclick="selectCat(4)"><i class="fa-solid fa-gears node-icon"></i><div class="node-label">Data Eng</div></div>
       <div class="cat-node" id="cat-5" onclick="selectCat(5)"><i class="fa-brands fa-docker node-icon"></i><div class="node-label">Cloud</div></div>
+      <div class="cat-node" id="cat-6" onclick="selectCat(6)"><i class="fa-solid fa-wand-magic-sparkles node-icon"></i><div class="node-label">Gen AI</div></div>
     </div>
 
     <!-- Mobile fallback -->
@@ -1076,9 +1079,9 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
      ============================================================ -->
 <div class="contact-wrap" id="contact">
   <div class="contact-inner">
-    <div class="contact-avail reveal"><span class="contact-avail-dot"></span>Available Summer 2026 · Open to roles US-wide</div>
+    <div class="contact-avail reveal"><span class="contact-avail-dot"></span>Available Now · Columbus, OH · Open to roles US-wide</div>
     <div class="contact-heading reveal d1">Say <em>hello.</em></div>
-    <p class="contact-sub reveal d2">Open to data science, analytics, and ML roles anywhere in the US, starting Summer 2026. Happy to talk about anything you are building.</p>
+    <p class="contact-sub reveal d2">Open to data science, ML, and AI engineering roles anywhere in the US. Happy to talk about anything you are building.</p>
     <div class="contact-pills reveal d3">
       <a href="javascript:void(0)" onclick="window.location.href='mai'+'lto:'+'simish98'+'@'+'umd.edu';" class="contact-pill primary">✉️ &nbsp;Email me</a>
       <a href="https://github.com/Simi-Shrivastava11" class="contact-pill ghost" target="_blank">GitHub ↗</a>
@@ -1094,7 +1097,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
 <footer>
   <div class="footer-inner">
     <p>Simi Shrivastava</p>
-    <p>Open to roles anywhere in the US</p>
+    <p>Open to roles anywhere in the US · Columbus, OH</p>
   </div>
 </footer>
 
@@ -1134,11 +1137,12 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
   /* ---- SKILLS WHEEL ---- */
   var CATS=[
     {label:'Languages',           icon:'fa-brands fa-python',               skills:['Python','SQL','R','Java','C / C++','MATLAB']},
-    {label:'ML and Deep Learning',icon:'fa-solid fa-microchip',             skills:['PyTorch','scikit-learn','XGBoost','CNNs','RNNs / LSTMs','Diffusion Models','NLP']},
+    {label:'ML and Deep Learning',icon:'fa-solid fa-microchip',             skills:['PyTorch','scikit-learn','XGBoost','CNNs','RNNs / LSTMs','NLP','Anomaly Detection']},
     {label:'Analytics',           icon:'fa-solid fa-magnifying-glass-chart',skills:['Pandas','NumPy','SciPy','A/B Testing','Stat Modeling','EDA','Time-series']},
     {label:'Visualization',       icon:'fa-solid fa-chart-pie',             skills:['Tableau','Power BI','Matplotlib','Seaborn','Excel']},
     {label:'Data Engineering',    icon:'fa-solid fa-gears',                 skills:['PySpark','ClickHouse','Snowflake','Parquet','ETL Pipelines']},
     {label:'Cloud and Infra',     icon:'fa-brands fa-docker',               skills:['AWS EC2','S3','Lambda','ECR / ECS','Docker','Git','Jenkins']},
+    {label:'Generative AI',       icon:'fa-solid fa-wand-magic-sparkles',   skills:['Diffusion Models','TabDDPM','Synthetic Data Gen','Class Conditioning','CTGAN','GANs','SMOTE','LLM Prompting']},
   ];
 
   var WHEEL=document.getElementById('wheel');
