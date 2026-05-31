@@ -820,10 +820,24 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
   <div class="section">
     <h2 class="sec-title reveal">Projects</h2>
 
-    <!-- Featured 2 -->
+    <!-- Featured 2 — top row -->
     <div class="proj-featured">
 
-      <a class="feat-card reveal d1" href="https://github.com/Simi-Shrivastava11/YOLOv8-via-AWS-ECS-Fargate" target="_blank">
+      <a class="feat-card reveal d1" href="https://github.com/Simi-Shrivastava11/product-experimentation-analytics" target="_blank">
+        <div class="feat-top"><span class="feat-arrow">↗</span></div>
+        <div class="feat-title">Product Experimentation Analytics Framework</div>
+        <div class="feat-stats">
+          <div class="fstat"><span class="fstat-val">+3.85 pp</span><span class="fstat-lbl">conversion lift</span></div>
+          <div class="fstat"><span class="fstat-val">p = 0.042</span><span class="fstat-lbl">statistically significant</span></div>
+          <div class="fstat"><span class="fstat-val">2,598</span><span class="fstat-lbl">users analysed</span></div>
+        </div>
+        <p class="feat-desc">Full-stack A/B test analytics pipeline on UCI Online Retail data. SQL metric layer in DuckDB, experiment validity checks, segment and funnel analysis. Tableau and Streamlit dashboards with live public links.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Python</span><span class="feat-tag">SQL</span><span class="feat-tag">DuckDB</span><span class="feat-tag">A/B Testing</span><span class="feat-tag">scipy</span><span class="feat-tag">Tableau</span><span class="feat-tag">Streamlit</span><span class="feat-tag">pandas</span>
+        </div>
+      </a>
+
+      <a class="feat-card reveal d2" href="https://github.com/Simi-Shrivastava11/YOLOv8-via-AWS-ECS-Fargate" target="_blank">
         <div class="feat-top"><span class="feat-arrow">↗</span></div>
         <div class="feat-title">YOLOv8 on AWS ECS/Fargate: Inference Serving at Scale</div>
         <div class="feat-stats">
@@ -836,88 +850,40 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
         </div>
       </a>
 
-      <!-- Product Experimentation Analytics — full width featured card -->
-<div class="feat-card reveal" style="grid-column:1/-1;cursor:default;">
-  <div class="feat-top" style="display:flex;justify-content:space-between;align-items:flex-start;">
-    <span class="feat-arrow" style="opacity:0;">↗</span>
-    <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
-      <a href="https://github.com/Simi-Shrivastava11/product-experimentation-analytics"
-         target="_blank"
-         style="font-size:.75rem;padding:.28rem .7rem;border-radius:5px;background:rgba(255,255,255,.12);color:inherit;text-decoration:none;border:1px solid rgba(255,255,255,.22);cursor:pointer;">
-        GitHub ↗
-      </a>
-      <a href="https://public.tableau.com/app/profile/simi.shrivastava/viz/ProductExperimentationAnalyticsDashboard/Dashboard1"
-         target="_blank"
-         style="font-size:.75rem;padding:.28rem .7rem;border-radius:5px;background:rgba(255,255,255,.12);color:inherit;text-decoration:none;border:1px solid rgba(255,255,255,.22);cursor:pointer;">
-        Tableau ↗
-      </a>
-      <a href="https://appuct-experimentation-analytics-py.streamlit.app"
-         target="_blank"
-         style="font-size:.75rem;padding:.28rem .7rem;border-radius:5px;background:rgba(255,255,255,.12);color:inherit;text-decoration:none;border:1px solid rgba(255,255,255,.22);cursor:pointer;">
-        Streamlit ↗
-      </a>
-    </div>
-  </div>
-  <div class="feat-title">Product Experimentation Analytics Framework</div>
-  <div class="feat-stats">
-    <div class="fstat"><span class="fstat-val">+3.85 pp</span><span class="fstat-lbl">conversion lift</span></div>
-    <div class="fstat"><span class="fstat-val">p = 0.042</span><span class="fstat-lbl">statistically significant</span></div>
-    <div class="fstat"><span class="fstat-val">2,598</span><span class="fstat-lbl">users analysed</span></div>
-  </div>
-  <p class="feat-desc">Built a full-stack A/B test analytics pipeline on the UCI Online Retail dataset. Simulated a checkout redesign experiment with known ground truth, ran data quality checks, built a SQL metric layer in DuckDB, validated experiment integrity, and delivered a statistically significant result (+11.1% relative conversion lift). Segment analysis showed Mobile and High Value customers drove the strongest effects. Ground truth recovery confirmed the framework correctly estimated all injected effects end to end.</p>
-  <div class="feat-tags">
-    <span class="feat-tag">Python</span>
-    <span class="feat-tag">SQL</span>
-    <span class="feat-tag">DuckDB</span>
-    <span class="feat-tag">A/B Testing</span>
-    <span class="feat-tag">scipy</span>
-    <span class="feat-tag">Tableau</span>
-    <span class="feat-tag">Streamlit</span>
-    <span class="feat-tag">pandas</span>
-    <span class="feat-tag">Statistics</span>
-  </div>
-</div> 
-
-      <a class="feat-card reveal d2" href="https://github.com/Simi-Shrivastava11/ocular-disease-ml" target="_blank">
-        <div class="feat-top"><span class="feat-arrow">↗</span></div>
-        <div class="feat-title">Ocular Disease Recognition from Retinal Fundus Images</div>
-        <div class="feat-stats">
-          <div class="fstat"><span class="fstat-val">10,000+</span><span class="fstat-lbl">fundus images</span></div>
-          <div class="fstat"><span class="fstat-val">91%</span><span class="fstat-lbl">classification accuracy</span></div>
-        </div>
-        <p class="feat-desc">End-to-end on ODIR-5K: EDA, image preprocessing, CNN with hyperparameter tuning and regularization, evaluated via confusion matrices and ROC curves.</p>
-        <div class="feat-tags">
-          <span class="feat-tag">Python</span><span class="feat-tag">CNN</span><span class="feat-tag">Pandas</span><span class="feat-tag">Seaborn</span><span class="feat-tag">EDA</span><span class="feat-tag">Hypothesis Testing</span>
-        </div>
-      </a>
-
     </div>
 
-    <!-- Secondary 5 -->
-    <div class="proj-rest">
+    <!-- Secondary row — 6 cards -->
+    <div class="proj-rest" style="grid-template-columns:repeat(6,1fr);">
 
-      <a class="rest-card reveal d1" href="https://github.com/Simi-Shrivastava11/tabddpm-hospital-readmission-prediction" target="_blank">
+      <a class="rest-card reveal d1" href="https://github.com/Simi-Shrivastava11/ocular-disease-ml" target="_blank">
+        <div class="rest-top"><span class="rest-arrow">↗</span></div>
+        <div class="rest-title">Ocular Disease Recognition from Retinal Fundus Images</div>
+        <p class="rest-desc">End-to-end on ODIR-5K: EDA, preprocessing, CNN with hyperparameter tuning. 91% accuracy.</p>
+        <div class="rest-tags"><span class="rest-tag">Python</span><span class="rest-tag">CNN</span><span class="rest-tag">Pandas</span><span class="rest-tag">EDA</span></div>
+      </a>
+
+      <a class="rest-card reveal d2" href="https://github.com/Simi-Shrivastava11/tabddpm-hospital-readmission-prediction" target="_blank">
         <div class="rest-top"><span class="rest-arrow">↗</span></div>
         <div class="rest-title">TabDDPM: Diffusion Models for Clinical Class Imbalance</div>
-        <p class="rest-desc">Built TabDDPM from scratch in PyTorch — Gaussian + multinomial diffusion with class conditioning — on 101,766 patient records. Achieved the best ROC-AUC of 0.6616 at 100% augmentation, outranking SMOTE and CTGAN.</p>
-        <div class="rest-tags"><span class="rest-tag">Diffusion Models</span><span class="rest-tag">PyTorch</span><span class="rest-tag">Generative AI</span><span class="rest-tag">XGBoost</span><span class="rest-tag">CTGAN</span><span class="rest-tag">Synthetic Data</span></div>
+        <p class="rest-desc">PyTorch on 101,766 patient records. Best ROC-AUC 0.6616, outranking SMOTE and CTGAN.</p>
+        <div class="rest-tags"><span class="rest-tag">Diffusion Models</span><span class="rest-tag">PyTorch</span><span class="rest-tag">XGBoost</span><span class="rest-tag">Synthetic Data</span></div>
       </a>
 
-      <a class="rest-card reveal d2" href="https://github.com/Simi-Shrivastava11/Sentiment-Classification-RNN" target="_blank">
+      <a class="rest-card reveal d3" href="https://github.com/Simi-Shrivastava11/Sentiment-Classification-RNN" target="_blank">
         <div class="rest-top"><span class="rest-arrow">↗</span></div>
         <div class="rest-title">What Actually Drives RNN Performance? A 36-Config Study</div>
         <p class="rest-desc">36 configs across RNN, LSTM, and BiLSTM on IMDB. Optimizer mattered more than architecture.</p>
         <div class="rest-tags"><span class="rest-tag">PyTorch</span><span class="rest-tag">LSTM</span><span class="rest-tag">BiLSTM</span></div>
       </a>
 
-      <a class="rest-card reveal d3" href="https://github.com/Simi-Shrivastava11/bpe-semantic-search" target="_blank">
+      <a class="rest-card reveal d4" href="https://github.com/Simi-Shrivastava11/bpe-semantic-search" target="_blank">
         <div class="rest-top"><span class="rest-arrow">↗</span></div>
         <div class="rest-title">Semantic Search Engine with BPE Tokenization</div>
         <p class="rest-desc">BPE tokenization, edit-distance autocorrect, and TF-IDF ranking over Project Gutenberg texts.</p>
         <div class="rest-tags"><span class="rest-tag">Python</span><span class="rest-tag">BPE</span><span class="rest-tag">TF-IDF</span></div>
       </a>
 
-      <a class="rest-card reveal d4" href="https://github.com/Simi-Shrivastava11/Language-Modeling-with-NGrams" target="_blank">
+      <a class="rest-card reveal d5" href="https://github.com/Simi-Shrivastava11/Language-Modeling-with-NGrams" target="_blank">
         <div class="rest-top"><span class="rest-arrow">↗</span></div>
         <div class="rest-title">N-Gram Language Modeling on Penn Treebank</div>
         <p class="rest-desc">Unigram through 4-gram models with four smoothing strategies, compared by perplexity.</p>
