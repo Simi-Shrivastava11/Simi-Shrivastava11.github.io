@@ -9,15 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Jost:wght@300;400;500&family=Caveat:wght@400;600;700&family=Chivo+Mono:wght@300;400&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
-/* ============================================================
-   RESET + ROOT
-   ============================================================ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-
-/* ---- DARK THEME (default) ---- */
 :root{
-  /* Deep indigo-black — not pure black, more like macOS dark slate */
+
   --bg:#14121f;
   --bg2:#1c1928;
   --card:#1c1928;
@@ -40,7 +35,7 @@ html{scroll-behavior:smooth}
   --caveat:'Caveat',cursive;
 }
 
-/* ---- LIGHT THEME ---- */
+
 body.light{
   --bg:#F7F5FF;
   --bg2:rgba(255,255,255,.75);
@@ -72,17 +67,11 @@ body{
 }
 a{text-decoration:none;color:inherit}
 
-/* ============================================================
-   REVEAL ANIMATIONS
-   ============================================================ */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
 .d4{transition-delay:.28s}.d5{transition-delay:.35s}
 
-/* ============================================================
-   NAV
-   ============================================================ */
 nav{
   position:sticky;top:0;z-index:50;
   background:var(--nav-bg);
@@ -120,9 +109,6 @@ nav{
 .theme-toggle:hover{border-color:var(--soft);color:var(--ink)}
 .theme-toggle svg{width:15px;height:15px;fill:currentColor;display:block}
 
-/* ============================================================
-   HERO
-   ============================================================ */
 .hero-wrap{
   min-height:calc(100vh - 52px);
   display:flex;flex-direction:column;justify-content:center;
@@ -174,7 +160,6 @@ body.light .hero-greeting{color:#111}
 body.dark .hero-tagline{color:var(--purple)}
 body.light .hero-tagline{color:var(--purple)}
 
-/* FIX 1 — bio text more prominent in light mode */
 .hero-bio{
   font-family:var(--sans);
   font-size:.95rem;
@@ -215,10 +200,7 @@ body.dark .cta-g{border:1px solid var(--border-card);color:#ccc}
 body.dark .cta-g:hover{border-color:#9080c8;color:#fff}
 body.light .cta-g{border:1px solid var(--border-card);color:#444}
 body.light .cta-g:hover{border-color:#9080c8;color:#111}
-
-/* ============================================================
-   MARQUEE
-   ============================================================ */
+   
 .marquee-band{
   width:100%;overflow:hidden;
   padding:.9rem 0;margin-top:2.5rem;
@@ -264,9 +246,6 @@ body.light .scroll-nudge{color:#c0b8d8}
 body.dark .nudge-line{background:#242036}
 body.light .nudge-line{background:#d8d4f0}
 
-/* ============================================================
-   SEPARATORS + SECTIONS
-   ============================================================ */
 .sep{border:none;border-top:1px solid var(--border);max-width:1140px;margin:0 auto}
 .section{max-width:1140px;margin:0 auto;padding:2.5rem 2rem}
 .sec-title{
@@ -277,15 +256,11 @@ body.light .nudge-line{background:#d8d4f0}
 body.dark .sec-title{color:#fff}
 body.light .sec-title{color:#111}
 
-/* ============================================================
-   FIX 2 — PROJECTS
-   ============================================================ */
 .proj-featured{
   display:grid;grid-template-columns:1fr 1fr;
   gap:10px;margin-bottom:10px;
 }
 
-/* Featured cards — tighter, no wasted vertical space */
 .feat-card{
   border-radius:8px;padding:1.5rem 1.65rem 1.45rem;
   display:flex;flex-direction:column;
@@ -329,7 +304,6 @@ body.light .feat-card:hover{background:var(--purple-feat-hover)}
   background:rgba(255,255,255,.12);color:rgba(255,255,255,.7);
 }
 
-/* FIX 2b — Secondary project cards — more prominent */
 .proj-rest{
   display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
 }
@@ -381,10 +355,7 @@ body.light .rest-tag{color:#4030a0;background:rgba(255,255,255,.4);border:1px so
   margin-top:.5rem;
 }
 .wip-dot{width:5px;height:5px;border-radius:50%;background:#d4a017;animation:blink 1.8s ease-in-out infinite}
-
-/* ============================================================
-   FIX 3 — EXPERIENCE / TIMELINE
-   ============================================================ */
+   
 .timeline{max-width:860px}
 .tl-entry{
   display:grid;grid-template-columns:180px 1fr;
@@ -452,7 +423,6 @@ body.dark .tl-prog-pill{color:#ccc;background:#14121f;border:1px solid var(--bor
 body.light .tl-prog-pill{color:#333;background:var(--purple-bg);border:1px solid #d8d0f0}
 .prog-arrow{font-size:.65rem;opacity:.3}
 
-/* FIX 3 — prose fully readable in both themes */
 .tl-prose{
   font-family:var(--sans);font-size:.88rem;
   line-height:1.85;margin-bottom:1rem;
@@ -476,8 +446,8 @@ body.light .tl-met span{color:#555}
   padding:.2rem .6rem;border-radius:2px;
   display:inline-block;margin-bottom:.9rem;
 }
-body.dark .tl-gpa{color:var(--purple);background:var(--purple-bg);border:1px solid var(--purple-border)}
-body.light .tl-gpa{color:var(--purple);background:var(--purple-bg);border:1px solid var(--purple-border)}
+body.dark .tl-gpa{color:#fff;background:var(--purple);border:1px solid var(--purple)}
+body.light .tl-gpa{color:#fff;background:var(--purple);border:1px solid var(--purple)}
 
 .tl-tags{display:flex;flex-wrap:wrap;gap:.3rem}
 .tl-tag{
