@@ -819,7 +819,7 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
           <div class="fstat"><span class="fstat-val">+5%</span><span class="fstat-lbl">promotion lift</span></div>
           <div class="fstat"><span class="fstat-val">+21%</span><span class="fstat-lbl">earthquake demand surge</span></div>
         </div>
-        <p class="feat-desc">Built a two-layer demand analytics system on real Ecuadorian grocery data. The forecasting layer predicts 4-week demand using LightGBM, Prophet, and baselines with walk-forward validation. The causal layer estimates true promotion incrementality using OLS counterfactual modeling and quantifies the April 2016 earthquake as a demand shock across 5 product categories. Analytics layer in Snowflake and dbt, with a live Streamlit dashboard.</p>
+        <p class="feat-desc">Built a two-layer demand analytics system on real Ecuadorian grocery data. LightGBM forecasts 4-week demand at 8.2% WAPE using walk-forward validation, while OLS counterfactual modeling estimates true promotion incrementality (5% lift) and quantifies the April 2016 earthquake as a demand shock across 5 product categories. Analytics layer in Snowflake and dbt with a live Streamlit dashboard.</p>
         <div class="feat-tags">
           <span class="feat-tag">Python</span><span class="feat-tag">LightGBM</span><span class="feat-tag">Prophet</span><span class="feat-tag">Causal Inference</span><span class="feat-tag">Snowflake</span><span class="feat-tag">dbt</span><span class="feat-tag">Streamlit</span><span class="feat-tag">Time Series</span>
         </div>
