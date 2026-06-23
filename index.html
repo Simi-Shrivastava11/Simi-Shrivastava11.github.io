@@ -305,7 +305,7 @@ body.light .feat-card:hover{background:var(--purple-feat-hover)}
 }
 
 .proj-rest{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
 }
 .rest-card{
   border-radius:8px;padding:1.35rem 1.25rem 1.2rem;
@@ -765,6 +765,8 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       <span class="marquee-item">$14K / mo cost savings <span class="marquee-sep"></span></span>
       <span class="marquee-item">GPA 3.86 / 4.0 <span class="marquee-sep"></span></span>
       <span class="marquee-item">Python · SQL · Apache Spark <span class="marquee-sep"></span></span>
+      <span class="marquee-item">LightGBM · Time Series · Causal Inference <span class="marquee-sep"></span></span>
+      <span class="marquee-item">Snowflake · dbt · Streamlit <span class="marquee-sep"></span></span>
       <span class="marquee-item">A/B Testing · Statistical Modeling · Tableau <span class="marquee-sep"></span></span>
       <span class="marquee-item">AWS · Docker · ClickHouse <span class="marquee-sep"></span></span>
       <span class="marquee-item">Columbus, OH · Open to roles US-wide <span class="marquee-sep"></span></span>
@@ -774,6 +776,8 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
       <span class="marquee-item">$14K / mo cost savings <span class="marquee-sep"></span></span>
       <span class="marquee-item">GPA 3.86 / 4.0 <span class="marquee-sep"></span></span>
       <span class="marquee-item">Python · SQL · Apache Spark <span class="marquee-sep"></span></span>
+      <span class="marquee-item">LightGBM · Time Series · Causal Inference <span class="marquee-sep"></span></span>
+      <span class="marquee-item">Snowflake · dbt · Streamlit <span class="marquee-sep"></span></span>
       <span class="marquee-item">A/B Testing · Statistical Modeling · Tableau <span class="marquee-sep"></span></span>
       <span class="marquee-item">AWS · Docker · ClickHouse <span class="marquee-sep"></span></span>
       <span class="marquee-item">Columbus, OH · Open to roles US-wide <span class="marquee-sep"></span></span>
@@ -807,46 +811,54 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
         </div>
       </a>
 
-      <a class="feat-card reveal d2" href="https://github.com/Simi-Shrivastava11/tabddpm-hospital-readmission-prediction" target="_blank">
+      <a class="feat-card reveal d2" href="https://github.com/Simi-Shrivastava11/causal-demand-forecasting" target="_blank">
         <div class="feat-top"><span class="feat-arrow">↗</span></div>
-        <div class="feat-title">TabDDPM: Diffusion Models for Clinical Class Imbalance</div>
+        <div class="feat-title">Causal Demand Forecasting & Promotion ROI Analytics</div>
         <div class="feat-stats">
-          <div class="fstat"><span class="fstat-val">101,766</span><span class="fstat-lbl">patient records</span></div>
-          <div class="fstat"><span class="fstat-val">0.6616</span><span class="fstat-lbl">best ROC-AUC</span></div>
+          <div class="fstat"><span class="fstat-val">8.2%</span><span class="fstat-lbl">WAPE — LightGBM</span></div>
+          <div class="fstat"><span class="fstat-val">+5%</span><span class="fstat-lbl">promotion lift</span></div>
+          <div class="fstat"><span class="fstat-val">+21%</span><span class="fstat-lbl">earthquake demand surge</span></div>
         </div>
-        <p class="feat-desc">Built TabDDPM from scratch in PyTorch — Gaussian + multinomial diffusion with class conditioning. Benchmarked against SMOTE and CTGAN. Threshold tuning pushed F1 from ~0.05 to ~0.27, showing threshold miscalibration was the bigger issue than synthetic data quality.</p>
+        <p class="feat-desc">Built a two-layer demand analytics system on real Ecuadorian grocery data. The forecasting layer predicts 4-week demand using LightGBM, Prophet, and baselines with walk-forward validation. The causal layer estimates true promotion incrementality using OLS counterfactual modeling and quantifies the April 2016 earthquake as a demand shock across 5 product categories. Analytics layer in Snowflake and dbt, with a live Streamlit dashboard.</p>
         <div class="feat-tags">
-          <span class="feat-tag">PyTorch</span><span class="feat-tag">Diffusion Models</span><span class="feat-tag">Generative AI</span><span class="feat-tag">XGBoost</span><span class="feat-tag">CTGAN</span><span class="feat-tag">Synthetic Data</span>
+          <span class="feat-tag">Python</span><span class="feat-tag">LightGBM</span><span class="feat-tag">Prophet</span><span class="feat-tag">Causal Inference</span><span class="feat-tag">Snowflake</span><span class="feat-tag">dbt</span><span class="feat-tag">Streamlit</span><span class="feat-tag">Time Series</span>
         </div>
       </a>
 
     </div>
 
-    <!-- Secondary 5 -->
+    <!-- Secondary 6 -->
     <div class="proj-rest">
 
-      <a class="rest-card reveal d1" href="https://github.com/Simi-Shrivastava11/YOLOv8-via-AWS-ECS-Fargate" target="_blank">
+      <a class="rest-card reveal d1" href="https://github.com/Simi-Shrivastava11/tabddpm-hospital-readmission-prediction" target="_blank">
+        <div class="rest-top"><span class="rest-arrow">↗</span></div>
+        <div class="rest-title">TabDDPM: Diffusion Models for Clinical Class Imbalance</div>
+        <p class="rest-desc">Built TabDDPM from scratch in PyTorch with Gaussian and multinomial diffusion with class conditioning. Benchmarked against SMOTE and CTGAN on 101K patient records. Best ROC-AUC 0.6616.</p>
+        <div class="rest-tags"><span class="rest-tag">PyTorch</span><span class="rest-tag">Diffusion Models</span><span class="rest-tag">XGBoost</span><span class="rest-tag">Synthetic Data</span></div>
+      </a>
+
+      <a class="rest-card reveal d2" href="https://github.com/Simi-Shrivastava11/YOLOv8-via-AWS-ECS-Fargate" target="_blank">
         <div class="rest-top"><span class="rest-arrow">↗</span></div>
         <div class="rest-title">YOLOv8 Inference Serving on AWS ECS/Fargate</div>
         <p class="rest-desc">ECS/Fargate vs single EC2 for YOLOv8 object detection across quiet, sustained, and burst traffic patterns. Tested on 5,000 COCO images; tracked p50, p95, and p99 latency with CloudWatch telemetry.</p>
         <div class="rest-tags"><span class="rest-tag">Python</span><span class="rest-tag">Docker</span><span class="rest-tag">Flask</span><span class="rest-tag">AWS ECS</span><span class="rest-tag">ECR</span><span class="rest-tag">YOLOv8</span></div>
       </a>
 
-      <a class="rest-card reveal d2" href="https://github.com/Simi-Shrivastava11/ocular-disease-ml" target="_blank">
+      <a class="rest-card reveal d3" href="https://github.com/Simi-Shrivastava11/ocular-disease-ml" target="_blank">
         <div class="rest-top"><span class="rest-arrow">↗</span></div>
         <div class="rest-title">Ocular Disease Recognition from Retinal Fundus Images</div>
         <p class="rest-desc">End-to-end CNN on ODIR-5K (10,000+ fundus images) for multi-label eye disease classification. Achieved 91% accuracy through hyperparameter tuning, regularization, and evaluation via confusion matrices and ROC curves.</p>
         <div class="rest-tags"><span class="rest-tag">Python</span><span class="rest-tag">CNN</span><span class="rest-tag">Pandas</span><span class="rest-tag">Seaborn</span><span class="rest-tag">EDA</span></div>
       </a>
 
-      <a class="rest-card reveal d3" href="https://github.com/Simi-Shrivastava11/Sentiment-Classification-RNN" target="_blank">
+      <a class="rest-card reveal d4" href="https://github.com/Simi-Shrivastava11/Sentiment-Classification-RNN" target="_blank">
         <div class="rest-top"><span class="rest-arrow">↗</span></div>
         <div class="rest-title">What Actually Drives RNN Performance? A 36-Config Study</div>
         <p class="rest-desc">Systematic comparison of RNN, LSTM, and BiLSTM across 36 configurations on the IMDB dataset. Key finding: optimizer choice had more impact on performance than architecture. Built entirely in PyTorch.</p>
         <div class="rest-tags"><span class="rest-tag">Python</span><span class="rest-tag">PyTorch</span><span class="rest-tag">LSTM</span><span class="rest-tag">BiLSTM</span><span class="rest-tag">Sentiment Analysis</span><span class="rest-tag">NLP</span></div>
       </a>
 
-      <a class="rest-card reveal d4" href="https://github.com/Simi-Shrivastava11/bpe-semantic-search" target="_blank">
+      <a class="rest-card reveal d5" href="https://github.com/Simi-Shrivastava11/bpe-semantic-search" target="_blank">
         <div class="rest-top"><span class="rest-arrow">↗</span></div>
         <div class="rest-title">Semantic Search Engine with BPE Tokenization</div>
         <p class="rest-desc">Built a search engine combining BPE tokenization, edit-distance autocorrect, and TF-IDF ranking over 18 Project Gutenberg texts.</p>
@@ -1108,10 +1120,10 @@ footer p{font-family:var(--mono);font-size:.6rem;color:var(--soft);letter-spacin
   /* ---- SKILLS WHEEL ---- */
   var CATS=[
     {label:'Languages',           icon:'fa-brands fa-python',               skills:['Python','SQL','R','MATLAB']},
-    {label:'ML and Deep Learning',icon:'fa-solid fa-microchip',             skills:['PyTorch','scikit-learn','XGBoost','CNNs','RNNs / LSTMs','NLP','Anomaly Detection']},
-    {label:'Analytics',           icon:'fa-solid fa-magnifying-glass-chart',skills:['Pandas','NumPy','SciPy','statsmodels','A/B Testing','Stat Modeling','EDA']},
+    {label:'ML and Deep Learning',icon:'fa-solid fa-microchip',             skills:['PyTorch','scikit-learn','XGBoost','LightGBM','CNNs','RNNs / LSTMs','NLP','Anomaly Detection']},
+    {label:'Analytics',           icon:'fa-solid fa-magnifying-glass-chart',skills:['Pandas','NumPy','SciPy','statsmodels','A/B Testing','Causal Inference','Time Series Forecasting','Counterfactual Modeling','EDA']},
     {label:'Visualization',       icon:'fa-solid fa-chart-pie',             skills:['Tableau','Power BI','Matplotlib','Seaborn','Plotly','Streamlit','Excel']},
-    {label:'Data Engineering',    icon:'fa-solid fa-gears',                 skills:['PySpark','ClickHouse','DuckDB','Parquet','ETL Pipelines']},
+    {label:'Data Engineering',    icon:'fa-solid fa-gears',                 skills:['Snowflake','dbt','PySpark','ClickHouse','DuckDB','Parquet','ETL Pipelines']},
     {label:'Cloud and Infra',     icon:'fa-brands fa-docker',               skills:['AWS EC2','S3','Lambda','ECR / ECS','Docker','Flask','Git','Jenkins']},
     {label:'Generative AI',       icon:'fa-solid fa-wand-magic-sparkles',   skills:['Diffusion Models','TabDDPM','Synthetic Data Gen','Class Conditioning','CTGAN','SMOTE']},
   ];
