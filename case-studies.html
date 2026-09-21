@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Case studies, Simi Shrivastava</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Caveat:wght@600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  --ink:#14130F; --paper:#FBFAF4; --line:#DCE5F0; --card:#FFFFFF; --muted:#5C584D;
+  --blue:#1D4ED8; --green:#1F8A4C; --violet:#6D28D9; --amber:#F5C518; --red:#E8502F; --grey:#B8B3A4;
+  --disp:Fraunces,Georgia,serif; --tech:'Space Grotesk',sans-serif;
+  --mono:'Space Mono',monospace; --body:Archivo,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{margin:0;color:var(--ink);font-family:var(--body);background-color:var(--paper);
+  background-image:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(0,0,0,0) 33px,var(--line) 33px,var(--line) 34px)}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1000px;margin:0 auto;padding:0 30px}
+
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:var(--paper);border-bottom:2px solid var(--ink)}
+.nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:1000px;margin:0 auto;padding:10px 30px}
+.brand{font-family:var(--disp);font-weight:700;font-size:18px}
+.nl{display:flex;gap:2px;align-items:center;flex-wrap:wrap}
+.nl a{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:1.1px;padding:9px 10px;border-bottom:3px solid transparent}
+.nl a.on{border-bottom-color:var(--red)}
+
+.cs{padding:42px 0 8px}
+.tag{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:1.5px}
+.ptitle{font-family:var(--tech);font-weight:700;font-size:15px;margin:8px 0 0;color:var(--muted)}
+.cs h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,50px);line-height:1.08;letter-spacing:-1.5px;margin:10px 0 0}
+.find{font-family:var(--tech);font-weight:700;font-size:clamp(17px,2.1vw,21px);line-height:1.45;margin:14px 0 0;max-width:780px}
+
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:24px}
+.mc{border:2px solid var(--ink);padding:12px 14px;box-shadow:4px 4px 0 var(--ink)}
+.mc em{font-style:normal;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:1.1px;display:block}
+.mc b{font-family:var(--tech);font-weight:700;font-size:14.5px;display:block;margin-top:5px;line-height:1.35}
+.mc.me{background:var(--ink);color:var(--paper)}
+.mc.me em{color:var(--amber)}
+
+.panel{border:2px solid var(--ink);background:var(--card);box-shadow:7px 7px 0 var(--ink);margin-top:26px}
+.panel .strip{height:10px}
+.panel .pin{padding:22px 24px}
+.cap{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:1.1px;color:var(--muted)}
+.fig{font-family:var(--tech);font-weight:700;font-size:17px;margin:6px 0 14px}
+.note{font-size:13px;line-height:1.65;color:var(--muted);margin-top:12px}
+
+.brow{display:flex;align-items:center;gap:11px;margin-top:10px}
+.bl{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.9px;width:138px;flex:none;text-align:right;color:var(--muted)}
+.brow i{height:20px;border:2px solid var(--ink);display:block;min-width:4px}
+.bv{font-family:var(--tech);font-weight:700;font-size:13.5px;white-space:nowrap}
+
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(21px,2.6vw,27px);letter-spacing:-.6px;margin:36px 0 0}
+p.body{font-size:15.5px;line-height:1.8;color:#31302A;margin:11px 0 0;max-width:760px}
+ul.body{font-size:15.5px;line-height:1.8;color:#31302A;margin:11px 0 0;max-width:760px;padding-left:20px}
+ul.body li{margin-bottom:5px}
+
+.tscroll{overflow-x:auto;margin-top:16px}
+table{border-collapse:collapse;width:100%;min-width:520px;background:var(--card);border:2px solid var(--ink)}
+th,td{border:1px solid #CFC9B9;padding:9px 12px;text-align:left;font-size:13.5px}
+th{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:1.1px;background:#F2F1EC}
+td.num{font-family:var(--tech);font-weight:700}
+tr.win td{background:#FFF6D6}
+td.good{background:#DFF4E4}
+td.bad{background:#FCE0EE}
+
+.links{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:26px}
+.btn{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:1.2px;border:2px solid var(--ink);
+  padding:12px 16px;background:var(--card);display:inline-block;box-shadow:4px 4px 0 var(--ink)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.divider{border-top:3px dashed #C9C3B2;margin-top:48px;padding-top:0;font-family:var(--mono);
+  font-size:10px;font-weight:700;letter-spacing:1.5px;color:#8E897C}
+.foot{border-top:2px solid var(--ink);margin-top:40px;padding:16px 0 46px;display:flex;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:1.2px;color:var(--muted)}
+.foot a{border-bottom:3px solid var(--amber);padding-bottom:2px;color:var(--ink)}
+
+@media(prefers-reduced-motion:no-preference){
+  .panel,.mc,.btn{transition:transform .15s ease,box-shadow .15s ease}
+  .panel:hover{transform:translate(-2px,-2px);box-shadow:10px 10px 0 var(--ink)}
+  .mc:hover,.btn:hover{transform:translate(-2px,-2px)}
+  .grow{transition:width 780ms cubic-bezier(.22,.9,.3,1)}
+  .nl a{transition:border-color .2s ease}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="in">
+  <a class="brand" href="index.html">Simi Shrivastava</a>
+  <div class="nl">
+    <a href="index.html">← HOME</a>
+    <a href="#cs1" class="on">FORECASTING</a><a href="#cs2">EXPERIMENTATION</a>
+    <a href="#cs3">DIFFUSION</a><a href="#cs4">DEPLOYMENT</a>
+  </div>
+</div></nav>
+
+<div class="wrap" id="top">
+
+<!-- ================= 01 ================= -->
+<section class="cs" id="cs1">
+  <div class="tag" style="color:var(--blue)">CASE STUDY 01 · FORECASTING &amp; CAUSAL INFERENCE</div>
+  <div class="ptitle">Causal Demand Forecasting &amp; Promotion ROI</div>
+  <h1>How much of this promotion actually worked?</h1>
+  <p class="find">When sales go up during a promotion, it is easy to give the promotion all the credit. I wanted to know how much of that bump it really caused.</p>
+
+  <div class="meta">
+    <div class="mc me"><em>WHAT I BUILT</em><b>All of it, from the warehouse to the dashboard</b></div>
+    <div class="mc" style="background:#DEE8FC"><em>DATA</em><b>Real daily sales from Favorita, a grocery chain in Ecuador</b></div>
+    <div class="mc" style="background:#DFF4E4"><em>METHOD</em><b>LightGBM to forecast, OLS to estimate the lift</b></div>
+    <div class="mc" style="background:#FFF6D6"><em>STACK</em><b>Python · Snowflake · dbt · Prophet · Streamlit</b></div>
+  </div>
+
+  <div class="panel">
+    <div class="strip" style="background:var(--blue)"></div>
+    <div class="pin">
+      <div class="cap">STORE 44 · GROCERY I · NOVEMBER 2015 PROMOTION</div>
+      <div class="fig">How the 368,070 units break down</div>
+      <div class="brow"><span class="bl">TOTAL SOLD</span><i class="grow" data-grow="100%" style="width:100%;background:var(--grey)"></i><span class="bv">368,070</span></div>
+      <div class="brow"><span class="bl">NORMAL DEMAND</span><i class="grow" data-grow="95.3%" style="width:95.3%;background:#DDD8CB"></i><span class="bv">350,703</span></div>
+      <div class="brow"><span class="bl">FROM THE PROMO</span><i class="grow" data-grow="4.7%" style="width:4.7%;background:var(--amber)"></i><span class="bv">17,367 · +5.0%</span></div>
+    </div>
+  </div>
+
+  <h2>What I was trying to do</h2>
+  <p class="body">Stores plan stock using forecasts, and they judge a promotion by how much sales went up. The problem is that sales go up for lots of reasons at once, like holidays or payday. If you just compare before and after, the promotion gets credit for sales it did not cause.</p>
+  <p class="body">So I wanted to answer two things. What will demand look like, and how much did the promotion really add?</p>
+
+  <h2>What I built</h2>
+  <p class="body">I split it into two parts, because forecasting and measuring a promotion are two different questions.</p>
+  <ul class="body">
+    <li>Set up the data in Snowflake and built the dbt models, with tests that catch bad data early.</li>
+    <li>Trained LightGBM to forecast four weeks ahead, tested it 21 times on unseen data, and compared it with Prophet, a moving average and a seasonal baseline.</li>
+    <li>Picked three product groups that moved like GROCERY I before the promotion but were not on promotion themselves (cleaning, dairy and beverages), and used them to estimate what GROCERY I would have sold without it.</li>
+    <li>Put it all in a Streamlit dashboard.</li>
+  </ul>
+
+  <h2>Results</h2>
+  <div class="panel">
+    <div class="strip" style="background:var(--blue)"></div>
+    <div class="pin">
+      <div class="cap">FORECAST ERROR (WAPE) · AVERAGE OF 21 TESTS · LOWER IS BETTER</div>
+      <div class="fig">LightGBM had the lowest error</div>
+      <div class="brow"><span class="bl">LIGHTGBM</span><i class="grow" data-grow="61%" style="width:61%;background:var(--blue)"></i><span class="bv">8.2%</span></div>
+      <div class="brow"><span class="bl">MOVING AVERAGE</span><i class="grow" data-grow="64%" style="width:64%;background:var(--grey)"></i><span class="bv">8.7%</span></div>
+      <div class="brow"><span class="bl">PROPHET</span><i class="grow" data-grow="84%" style="width:84%;background:var(--grey)"></i><span class="bv">11.3%</span></div>
+      <div class="brow"><span class="bl">SEASONAL NAIVE</span><i class="grow" data-grow="100%" style="width:100%;background:var(--grey)"></i><span class="bv">13.5%</span></div>
+      <p class="note">WAPE is the total error divided by total sales.</p>
+    </div>
+  </div>
+
+  <div class="tscroll"><table>
+    <tr><th>Result</th><th>Value</th></tr>
+    <tr class="win"><td>Forecast error, LightGBM</td><td class="num">8.2% WAPE</td></tr>
+    <tr><td>Units sold during the promotion</td><td class="num">368,070</td></tr>
+    <tr><td>Units expected without the promotion</td><td class="num">350,703</td></tr>
+    <tr class="win"><td>Extra units from the promotion (estimated)</td><td class="num">17,367 · +5.0%</td></tr>
+  </table></div>
+
+  <div class="links">
+    <a class="btn solid" href="https://github.com/Simi-Shrivastava11/causal-demand-forecasting" target="_blank" rel="noopener">‹ › VIEW THE CODE</a>
+    <a class="btn" href="https://causal-demand-forecasting-lcadpikgbtacbjt2tnu3br.streamlit.app" target="_blank" rel="noopener">▶ OPEN THE DASHBOARD</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================= 02 ================= -->
+<section class="cs" id="cs2">
+  <div class="tag" style="color:var(--green)">CASE STUDY 02 · EXPERIMENTATION &amp; BI</div>
+  <div class="ptitle">A/B Test Analytics Framework</div>
+  <h1>Can this experiment be trusted?</h1>
+  <p class="find">I built an A/B testing setup that checks the test is sound before it looks at any results. Then I broke the data on purpose to make sure it would catch the problems.</p>
+
+  <div class="meta">
+    <div class="mc me"><em>WHAT I BUILT</em><b>The whole thing, from data checks to the dashboard</b></div>
+    <div class="mc" style="background:#DFF4E4"><em>DATA</em><b>541,909 real online retail transactions</b></div>
+    <div class="mc" style="background:#DEE8FC"><em>TEST DESIGN</em><b>Real transactions, simulated split, with effects I already knew the size of</b></div>
+    <div class="mc" style="background:#FFF6D6"><em>STACK</em><b>SQL · DuckDB · Python · Tableau · Streamlit</b></div>
+  </div>
+
+  <div class="panel">
+    <div class="strip" style="background:var(--green)"></div>
+    <div class="pin">
+      <div class="cap">PROBLEMS I PLANTED IN THE DATA</div>
+      <div class="fig">The checks caught every one before any results were run</div>
+      <div class="brow"><span class="bl">LEAKED EVENTS</span><i class="grow" data-grow="100%" style="width:100%;background:var(--green)"></i><span class="bv">2,000 caught</span></div>
+      <div class="brow"><span class="bl">DUPLICATE ROWS</span><i class="grow" data-grow="25%" style="width:25%;background:var(--green)"></i><span class="bv">500 caught</span></div>
+      <div class="brow"><span class="bl">IN BOTH GROUPS</span><i class="grow" data-grow="6%" style="width:6%;background:var(--green)"></i><span class="bv">120 caught</span></div>
+    </div>
+  </div>
+
+  <h2>What I was trying to do</h2>
+  <p class="body">Most tutorials jump straight to a t-test. But first you need to know if the test itself is okay. Did users split evenly? Were the two groups similar to begin with? Is data from before the test sneaking in? If any of that is off, the p-value does not mean much.</p>
+  <p class="body">I had only done pieces of this in coursework, never the whole thing start to finish. So I built all of it.</p>
+
+  <h2>What I built</h2>
+  <ul class="body">
+    <li>Cleaned 541,909 transactions down to 397,924, across 4,338 users.</li>
+    <li>Wrote every metric once in SQL, in DuckDB, so both groups are measured exactly the same way.</li>
+    <li>Built checks that run before any results: an even split, no duplicate users, no one in both groups, and no data leaking in from before the test.</li>
+    <li>Ran the tests with a z-test and bootstrap confidence intervals. Conversion was the main metric. I also tracked revenue per user, and order value as a guardrail.</li>
+    <li>Built a Tableau dashboard and a Streamlit app to show the results.</li>
+  </ul>
+
+  <h2>Results</h2>
+  <div class="tscroll"><table>
+    <tr><th>Metric</th><th>Control</th><th>Treatment</th><th>Change</th><th>p-value</th></tr>
+    <tr class="win"><td>Conversion (main metric)</td><td class="num">34.78%</td><td class="num">38.63%</td><td class="num">+3.85 pp</td><td class="num">0.042</td></tr>
+    <tr><td>Revenue per user</td><td class="num">152.66</td><td class="num">155.93</td><td class="num">+2.1%</td><td class="num">not significant</td></tr>
+    <tr><td>Average order value (guardrail)</td><td class="num">438.90</td><td class="num">403.60</td><td class="num">−8.0%</td><td class="num">not significant</td></tr>
+  </table></div>
+  <p class="note">Order value dropped 8%, but it was not significant, so the guardrail passed. I still watch it, because an easier checkout could bring in more small orders.</p>
+
+  <div class="panel">
+    <div class="strip" style="background:var(--green)"></div>
+    <div class="pin">
+      <div class="cap">CONVERSION LIFT BY SEGMENT</div>
+      <div class="fig">Mobile users moved the most</div>
+      <div class="brow"><span class="bl">MOBILE</span><i class="grow" data-grow="62%" style="width:62%;background:var(--green)"></i><span class="bv">+19.4% · p .034</span></div>
+      <div class="brow"><span class="bl">HIGH VALUE</span><i class="grow" data-grow="43%" style="width:43%;background:var(--green)"></i><span class="bv">+13.3% · p .014</span></div>
+      <div class="brow"><span class="bl">WEB</span><i class="grow" data-grow="21%" style="width:21%;background:transparent;border-style:dashed"></i><span class="bv">+6.4% · not significant</span></div>
+    </div>
+  </div>
+
+  <div class="links">
+    <a class="btn solid" href="https://github.com/Simi-Shrivastava11/product-experimentation-analytics" target="_blank" rel="noopener">‹ › VIEW THE CODE</a>
+    <a class="btn" href="https://public.tableau.com/app/profile/simi.shrivastava/viz/ProductExperimentationAnalyticsDashboard/Dashboard1" target="_blank" rel="noopener">▶ TABLEAU DASHBOARD</a>
+    <a class="btn" href="https://appuct-experimentation-analytics-py.streamlit.app" target="_blank" rel="noopener">▶ STREAMLIT APP</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================= 03 ================= -->
+<section class="cs" id="cs3">
+  <div class="tag" style="color:var(--violet)">CASE STUDY 03 · GENERATIVE MODELLING</div>
+  <div class="ptitle">TabDDPM for Hospital Readmission Prediction</div>
+  <h1>Can a diffusion model fix class imbalance in patient data?</h1>
+  <p class="find">We built a diffusion model from scratch to create fake but realistic patient records, and tested whether they could help predict who comes back to the hospital.</p>
+
+  <div class="meta">
+    <div class="mc me"><em>WHAT I BUILT</em><b>The class conditioning and the pipeline that generates new patients</b></div>
+    <div class="mc" style="background:#E8E0FA"><em>DATA</em><b>101,766 diabetic patients from 130 US hospitals</b></div>
+    <div class="mc" style="background:#DEE8FC"><em>MODEL</em><b>TabDDPM, written from scratch in PyTorch</b></div>
+    <div class="mc" style="background:#FFF6D6"><em>COMPARED WITH</em><b>No augmentation · SMOTE · CTGAN</b></div>
+  </div>
+
+  <div class="panel">
+    <div class="strip" style="background:var(--violet)"></div>
+    <div class="pin">
+      <div class="cap">F1 FOR READMITTED PATIENTS · SAME MODELS, DIFFERENT CUTOFF</div>
+      <div class="fig">Changing the cutoff from 0.50 to 0.15 made F1 about five times better</div>
+      <div class="brow"><span class="bl">CUTOFF 0.50</span><i class="grow" data-grow="19%" style="width:19%;background:var(--grey)"></i><span class="bv">F1 ≈ 0.05</span></div>
+      <div class="brow"><span class="bl">CUTOFF 0.15</span><i class="grow" data-grow="96%" style="width:96%;background:var(--violet)"></i><span class="bv">F1 ≈ 0.27</span></div>
+    </div>
+  </div>
+
+  <h2>What I was trying to do</h2>
+  <p class="body">Only about 11% of patients in this data came back to the hospital within 30 days. A model trained on that learns to just say "not readmitted" for everyone. It gets 89% accuracy and misses almost every patient who matters.</p>
+  <p class="body">The idea was to create synthetic readmitted patients and add them to the training data, so the model has more examples to learn from. We wanted to see if a diffusion model did this better than SMOTE and CTGAN.</p>
+
+  <h2>What I built</h2>
+  <p class="body">I built the part that tells the model which kind of patient to make. It turns the label into a vector the model can use, and passes it in at every one of the 1,000 steps, not just at the start. That way the model does not lose track of it halfway through.</p>
+  <p class="body">We made synthetic patients at 50%, 100% and 200% of the real readmitted group, then retrained the same XGBoost model on each one, five times over.</p>
+
+  <h2>Results</h2>
+  <div class="tscroll"><table>
+    <tr><th>Method</th><th>F1, readmitted patients</th><th>ROC-AUC</th></tr>
+    <tr><td>No augmentation</td><td class="num">0.0548</td><td class="num">0.6581</td></tr>
+    <tr><td>SMOTE</td><td class="num">0.0524</td><td class="num">0.6525</td></tr>
+    <tr><td>CTGAN</td><td class="num">0.0480</td><td class="num">0.6599</td></tr>
+    <tr><td>TabDDPM 50%</td><td class="num">0.0405</td><td class="num">0.6588</td></tr>
+    <tr class="win"><td>TabDDPM 100%</td><td class="num">0.0477</td><td class="num">0.6616</td></tr>
+    <tr><td>TabDDPM 200%</td><td class="num">0.0421</td><td class="num">0.6584</td></tr>
+  </table></div>
+  <p class="note">TabDDPM at 100% had the best ROC-AUC, so it was the best at ranking which patients were most at risk.</p>
+
+  <h2>Changing the cutoff</h2>
+  <p class="body">All of those used the default cutoff of 0.5. With so few readmitted patients, almost nobody gets a score above 0.5, so the model says "not readmitted" to nearly everyone. We tried ten cutoffs between 0.05 and 0.50, and every method did best at 0.15.</p>
+  <div class="tscroll"><table>
+    <tr><th>Method</th><th>Best cutoff</th><th>F1</th></tr>
+    <tr><td>No augmentation</td><td class="num">0.15</td><td class="num">0.2686</td></tr>
+    <tr><td>SMOTE</td><td class="num">0.15</td><td class="num">0.2712</td></tr>
+    <tr class="win"><td>CTGAN</td><td class="num">0.15</td><td class="num">0.2742</td></tr>
+    <tr><td>TabDDPM 100%</td><td class="num">0.15</td><td class="num">0.2704</td></tr>
+  </table></div>
+  <p class="note">The fake patients looked real. Their distributions matched, and on a t-SNE plot you could not tell them apart from real ones. TabDDPM also gave the same result every run, which SMOTE did not.</p>
+
+  <div class="links">
+    <a class="btn solid" href="https://github.com/Simi-Shrivastava11/tabddpm-hospital-readmission-prediction" target="_blank" rel="noopener">‹ › VIEW THE CODE</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================= 04 ================= -->
+<section class="cs" id="cs4">
+  <div class="tag" style="color:var(--red)">CASE STUDY 04 · DEPLOYMENT &amp; CLOUD</div>
+  <div class="ptitle">YOLOv8 Object Detection on AWS</div>
+  <h1>One EC2 box or managed AWS?</h1>
+  <p class="find">We deployed the same YOLOv8 model two ways on AWS, kept everything else the same, and tested how each one handled changing traffic.</p>
+
+  <div class="meta">
+    <div class="mc me"><em>WHAT I BUILT</em><b>The YOLOv8 service, its Flask API and the Docker image</b></div>
+    <div class="mc" style="background:#FBE3CE"><em>COMPARED</em><b>One EC2 server vs ECS Fargate with autoscaling</b></div>
+    <div class="mc" style="background:#DEE8FC"><em>TESTED ON</em><b>5,000 COCO images, four traffic levels</b></div>
+    <div class="mc" style="background:#FFF6D6"><em>STACK</em><b>Python · Flask · Docker · ECR · ECS · Fargate · CloudWatch</b></div>
+  </div>
+
+  <div class="panel">
+    <div class="strip" style="background:var(--red)"></div>
+    <div class="pin">
+      <div class="cap">FAILED REQUESTS · QUIET TRAFFIC</div>
+      <div class="fig">ECS Fargate did not drop a request at any traffic level</div>
+      <div class="brow"><span class="bl">ONE EC2 SERVER</span><i class="grow" data-grow="100%" style="width:100%;background:var(--grey)"></i><span class="bv">22.3% failed</span></div>
+      <div class="brow"><span class="bl">ECS FARGATE</span><i class="grow" data-grow="1%" style="width:1%;background:var(--red)"></i><span class="bv">0% failed</span></div>
+    </div>
+  </div>
+
+  <h2>What we were trying to do</h2>
+  <p class="body">Object detection needs to stay fast when traffic goes up and down. Most comparisons change a lot of things at once, like the model or the cloud provider, so you cannot tell what made the difference.</p>
+  <p class="body">We changed only one thing: how it was deployed. Same model, same Docker image, same images, same traffic. One version ran on a single EC2 server. The other ran on ECS Fargate with a load balancer and autoscaling.</p>
+
+  <h2>What I built</h2>
+  <p class="body">I set up the YOLOv8 model, wrapped it in a small Flask API and packaged it with Docker into ECR. You send it an image, it runs detection and sends back what it found. The model loads once when the service starts, not on every request.</p>
+  <p class="body">Both setups pulled this same image, so any difference came from the deployment and not the code. We tested four traffic levels, from quiet to high, and tracked response time, failed requests and resource use.</p>
+
+  <h2>Results</h2>
+  <div class="tscroll"><table>
+    <tr><th>Response time (ms)</th><th>Quiet · ECS</th><th>Quiet · EC2</th><th>Steady · ECS</th><th>Steady · EC2</th><th>High · ECS</th><th>High · EC2</th></tr>
+    <tr><td>Average</td><td class="num">435.2</td><td class="num">493.8</td><td class="num">327.7</td><td class="num">69.0</td><td class="num">319.1</td><td class="num">29.3</td></tr>
+    <tr><td>p95</td><td class="num">614.9</td><td class="num">2,073.3</td><td class="num">502.7</td><td class="num">52.9</td><td class="num">479.3</td><td class="num">45.6</td></tr>
+    <tr class="win"><td>p99</td><td class="num good">1,034.4</td><td class="num bad">2,097.1</td><td class="num good">693.1</td><td class="num bad">2,055.9</td><td class="num">628.4</td><td class="num">61.4</td></tr>
+  </table></div>
+
+  <div class="tscroll"><table>
+    <tr><th>Failed requests</th><th>Quiet</th><th>Steady</th><th>Increasing</th><th>High</th></tr>
+    <tr class="win"><td>ECS Fargate</td><td class="num good">0 · 0%</td><td class="num good">0 · 0%</td><td class="num good">0 · 0%</td><td class="num good">0 · 0%</td></tr>
+    <tr><td>One EC2 server</td><td class="num bad">67 · 22.3%</td><td class="num bad">88 · 1.5%</td><td class="num">0 · 0%</td><td class="num">0 · 0%</td></tr>
+  </table></div>
+  <p class="note">EC2 was faster on average under steady and high traffic, since everything ran on one machine. But ECS Fargate kept its slowest requests in check as traffic changed, did not drop a single request, and added capacity when it needed it.</p>
+
+  <div class="links">
+    <a class="btn solid" href="https://github.com/Simi-Shrivastava11/YOLOv8-via-AWS-ECS-Fargate" target="_blank" rel="noopener">‹ › VIEW THE CODE</a>
+  </div>
+</section>
+
+<div class="foot">
+  <span>MADE WITH COFFEE AND A LOT OF SECOND DRAFTS</span>
+  <a href="#top">BACK TO TOP ↑</a>
+</div>
+
+</div>
+
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(!('IntersectionObserver' in window)) return;
+  var bars=[].slice.call(document.querySelectorAll('.grow'));
+  bars.forEach(function(b){b.dataset.w=b.dataset.grow;b.style.width='0%';});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting) return;var b=e.target;
+    setTimeout(function(){b.style.width=b.dataset.w;},160);io.unobserve(b);});},{threshold:.3});
+  bars.forEach(function(b){io.observe(b);});
+  var links=[].slice.call(document.querySelectorAll('.nl a[href^="#cs"]'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  var sio=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    links.forEach(function(a,i){a.classList.toggle('on',secs[i]===e.target);});});},
+    {rootMargin:'-40% 0px -55% 0px'});
+  secs.forEach(function(s){if(s) sio.observe(s);});
+})();
+</script>
+</body>
+</html>
