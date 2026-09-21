@@ -276,7 +276,7 @@ h1{font-family:var(--disp);font-weight:700;font-size:clamp(44px,8.4vw,104px);lin
       <span class="hi">hi, I'm</span>
       <h1>Simi<br>Shrivastava</h1>
       <div class="now">From exploratory analysis and dashboards to ML models and production pipelines.</div>
-      <p class="lede">Right now I am thinking about <span class="slot" id="slot"><span>forecasts</span></span></p>
+      <p class="lede">Right now I am thinking about <span class="slot" id="slot"><span>outliers</span></span></p>
       <div class="cta">
         <a class="btn solid" href="#work">SEE THE WORK ↓</a>
         <a class="btn" href="https://github.com/Simi-Shrivastava11" target="_blank" rel="noopener">GITHUB ↗</a>
@@ -453,7 +453,7 @@ h1{font-family:var(--disp);font-weight:700;font-size:clamp(44px,8.4vw,104px);lin
       <div class="skc rise" style="background:#DEE8FC"><h3>PROGRAMMING &amp; QUERY</h3><div class="ul"></div>
         <ul><li>Python</li><li>SQL</li><li>R</li><li>PySpark</li><li>Git</li></ul></div>
       <div class="skc rise" style="background:#DFF4E4"><h3>DATA ENGINEERING &amp; WAREHOUSING</h3><div class="ul"></div>
-        <ul><li>Snowflake</li><li>dbt</li><li>Apache Spark</li><li>ClickHouse</li><li>DuckDB</li><li>ETL / ELT</li><li>Data quality testing</li></ul></div>
+        <ul><li>Snowflake</li><li>Databricks</li><li>dbt</li><li>Apache Spark</li><li>ClickHouse</li><li>DuckDB</li><li>ETL / ELT</li><li>Data quality testing</li></ul></div>
       <div class="skc rise" style="background:#FCE0EE"><h3>STATISTICS &amp; EXPERIMENTATION</h3><div class="ul"></div>
         <ul><li>A/B testing</li><li>Hypothesis testing</li><li>Bootstrap confidence intervals</li><li>Causal inference</li><li>Time series forecasting</li></ul></div>
       <div class="skc rise" style="background:#E8E0FA"><h3>MACHINE LEARNING</h3><div class="ul"></div>
@@ -461,11 +461,12 @@ h1{font-family:var(--disp);font-weight:700;font-size:clamp(44px,8.4vw,104px);lin
       <div class="skc rise" style="background:#FFF6D6"><h3>BI &amp; VISUALISATION</h3><div class="ul"></div>
         <ul><li>Tableau</li><li>Power BI</li><li>Streamlit</li><li>Excel</li><li>Dashboard design</li><li>Stakeholder reporting</li></ul></div>
       <div class="skc rise" style="background:#FBE3CE"><h3>CLOUD &amp; DEPLOYMENT</h3><div class="ul"></div>
-        <ul><li>AWS ECS / Fargate / ECR</li><li>Docker</li><li>Flask</li><li>Databricks</li><li>CloudWatch</li></ul></div>
+        <ul><li>AWS ECS / Fargate / ECR</li><li>Docker</li><li>CloudWatch</li></ul></div>
     </div>
     <div class="certs rise">
-      <span class="lb">also certified in</span>
+      <span class="lb">certifications &amp; training</span>
       <span>DATABRICKS FUNDAMENTALS ACCREDITATION</span>
+      <span>DATABRICKS GENERATIVE AI FUNDAMENTALS ACCREDITATION</span>
       <span>DATABRICKS: GET STARTED WITH DATA ENGINEERING</span>
     </div>
   </section>
@@ -488,7 +489,7 @@ h1{font-family:var(--disp);font-weight:700;font-size:clamp(44px,8.4vw,104px);lin
       <div class="cin">
         <div class="cleft">
           <div class="chand">drop me a line</div>
-          <a class="mail" href="mailto:simish98@umd.edu">simish98@umd.edu</a>
+          <a class="mail" href="#" onclick="this.href='mailto:'+'simishrivastava111'+'@'+'gmail.com'">Email me →</a>
           <p>Open to data science, analytics, analytics engineering and BI roles anywhere in the US.</p>
         </div>
         <div class="cright">
@@ -513,7 +514,7 @@ h1{font-family:var(--disp);font-weight:700;font-size:clamp(44px,8.4vw,104px);lin
   // rotating word in the hero
   var slot=document.getElementById('slot');
   if(slot&&!reduce){
-    var words=['forecasts','experiments','data pipelines','dashboards','messy data'],i=0;
+    var words=['outliers','what to eat','why the join doubled my rows','coffee','a second coffee','date formats that disagree','which movie to watch next','data pipelines','my next Wordle guess','the right threshold'],i=0;
     var el=slot.firstElementChild;
     setInterval(function(){
       i=(i+1)%words.length;
